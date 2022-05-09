@@ -11,8 +11,8 @@ public class Player_Controller : MonoBehaviour
     [Header ("Movimientos")]
     [Space]
     [SerializeField] private float horizontalMove; 
-    [SerializeField] private float verticalMove;
-    private float playerSpeed = 10f;
+    [SerializeField] private float verticalMove; 
+    private float playerSpeed = 10f; 
     private float runSpeed = 24f; 
     private float gravity = 20f; 
     Vector3 playerInput;
@@ -25,8 +25,7 @@ public class Player_Controller : MonoBehaviour
     float minRotation = -65f; 
     float maxRotation = 60f;
     float h_mouse, v_mouse; 
-   
-
+    
     void Start()
     {
         player = GetComponent<CharacterController>();
