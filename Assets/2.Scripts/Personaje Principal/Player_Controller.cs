@@ -12,20 +12,30 @@ public class Player_Controller : MonoBehaviour
     [Space]
     [SerializeField] private float horizontalMove; 
     [SerializeField] private float verticalMove;
-    private float playerSpeed = 25; 
+    private float playerSpeed = 10f;
+    private float runSpeed = 24f; 
+    private float gravity = 20f; 
+    Vector3 playerInput;
+
+    [Header("Camara")]
+    [Space]
+    Camera cam;
+    float mouseHorizontal = 3f;
+    float mouseVertical = 2f; 
+    float minRotation = -65f; 
+    float maxRotation = 60f;
+    float h_mouse, v_mouse; 
+   
 
     void Start()
     {
         player = GetComponent<CharacterController>();
+        cam = FindObjectOfType<Camera>();
     }
 
     void Update()
     {
-        
-    }
-
-    private void FixedUpdate()
-    {
+        rotarse();
         moverse();
     }
 
@@ -34,6 +44,30 @@ public class Player_Controller : MonoBehaviour
         horizontalMove = Input.GetAxis("Horizontal");
         verticalMove = Input.GetAxis("Vertical");
 
-        player.Move(new Vector3(horizontalMove, 0 , verticalMove) * playerSpeed * Time.deltaTime);
+        playerInput = new Vector3(horizontalMove, 0 ,verticalMove);
+
+        if(Input.GetKey(KeyCode.LeftShift))
+        {
+            playerInput = transform.TransformDirection(playerInput) * runSpeed;
+        }
+        else
+        {
+            playerInput = transform.TransformDirection(playerInput) * playerSpeed;
+        }
+
+        player.Move( playerInput * Time.deltaTime);
+    }
+
+    private void rotarse()
+    {
+        h_mouse = mouseHorizontal * Input.GetAxis("Mouse X");
+        v_mouse += mouseVertical * Input.GetAxis("Mouse Y"); 
+
+
+        v_mouse = Mathf.Clamp(v_mouse, minRotation, maxRotation);
+
+        cam.transform.localEulerAngles =  new Vector3(-v_mouse, 0, 0);
+
+        transform.Rotate(0, h_mouse, 0);
     }
 }
