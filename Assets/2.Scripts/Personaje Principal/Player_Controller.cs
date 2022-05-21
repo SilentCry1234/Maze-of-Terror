@@ -6,14 +6,15 @@ public class Player_Controller : MonoBehaviour
 {
     [Header("CharacterController")]
     [Space]
-    [SerializeField] CharacterController player; 
+    [SerializeField] CharacterController player;
 
-    [Header ("Movimientos")]
+    [Header("Movimientos")]
     [Space]
-    [SerializeField] private float horizontalMove; 
+    [SerializeField] private float horizontalMove;
     [SerializeField] private float verticalMove;
-    private float playerSpeed = 12f; 
-    private float runSpeed = 30f; 
+    private float playerSpeed = 12f;
+    private float runSpeed = 30f;
+    [SerializeField] private float stamina = 10f, timeToRecover = 5f, staminaMAX;
     Vector3 playerInput;
 
     [Header ("Gravedad")]
@@ -32,12 +33,20 @@ public class Player_Controller : MonoBehaviour
     float mouseVertical = 2f; 
     float minRotation = -65f; 
     float maxRotation = 60f; 
-    float h_mouse, v_mouse; 
+    float h_mouse, v_mouse;
+
+    [Header("Correr con linterna")]
+    [Space]
+    public Transform Flashlight; 
+    Vector3 xyz; 
+
     
     void Start()
     {
         player = GetComponent<CharacterController>();
         cam = FindObjectOfType<Camera>();
+
+        staminaMAX = stamina; 
     }
 
     void Update()
@@ -55,13 +64,32 @@ public class Player_Controller : MonoBehaviour
         playerInput = new Vector3(horizontalMove, 0 ,verticalMove);
         playerInput = Vector3.ClampMagnitude(playerInput, 1);
 
-        if(Input.GetKey(KeyCode.LeftShift))
+        if(Input.GetKey(KeyCode.LeftShift) && stamina >= 0f)
         {
+            xyz = new Vector3(25, 0, 0);
+            Flashlight.localEulerAngles = Vector3.Lerp(Flashlight.localEulerAngles, xyz, Time.deltaTime * 2.5f);   
+
             playerInput = transform.TransformDirection(playerInput) * runSpeed;
+
+            stamina -= Time.deltaTime;  
+
+            if(stamina <= 0f)
+            {
+                stamina = -timeToRecover; 
+            }
         }
         else
         {
+            xyz = new Vector3(0, 0, 0);
+            Flashlight.localEulerAngles = Vector3.Lerp(Flashlight.localEulerAngles, xyz, Time.deltaTime * 2.5f);
+
             playerInput = transform.TransformDirection(playerInput) * playerSpeed;
+
+            if(stamina < staminaMAX)
+            {
+                stamina += Time.deltaTime;
+            }
+            
         }
 
         player.Move(playerInput * Time.deltaTime);
