@@ -50,7 +50,7 @@ public class Linterna : MonoBehaviour
             cut.Play();
         }
 
-        if(battery <= 0)
+        if(battery <= 0f)
         {
             battery = 0.1f;
         }
