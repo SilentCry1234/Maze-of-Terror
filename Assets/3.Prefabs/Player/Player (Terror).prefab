@@ -311,6 +311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   luz: {fileID: 208657971406613205}
   battery: 20
+  deductValue: 1
   On_Off: {fileID: 9093285069281374139}
   cut: {fileID: 9044382326560199075}
   player: {fileID: 2163761698960474809}

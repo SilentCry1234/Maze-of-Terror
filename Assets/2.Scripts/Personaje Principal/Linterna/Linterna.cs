@@ -8,7 +8,8 @@ public class Linterna : MonoBehaviour
     [Space]
     [SerializeField] GameObject luz;
     public float battery;
-    [SerializeField] float deductValue; // Valor 1 significa: 1 por segundo. Disminuir este valor hace que dure mas la linterna.
+    [Tooltip ("Valor 1 significa: 1 por segundo. Disminuir este valor hace que dure mas la linterna.")]
+    [SerializeField] float deductValue;
 
     [Header ("Audio")]
     [Space]
@@ -35,11 +36,9 @@ public class Linterna : MonoBehaviour
             battery -= deductValue * Time.deltaTime;
         }
 
-        
-
         if (Input.GetKeyDown(KeyCode.F) && battery > 0)
         {
-            luz.SetActive(!luz.activeSelf);
+            luz.SetActive(!luz.activeSelf); 
             On_Off.Play(); 
         }
     }
@@ -54,7 +53,7 @@ public class Linterna : MonoBehaviour
 
         if(battery <= 0f)
         {
-            battery = 0.1f;
+            battery = 0.01f;
         }
     }
 
@@ -75,4 +74,6 @@ public class Linterna : MonoBehaviour
             }
         }
     }
+
+    //Agregar una corrutina para disparar la linterna. Para no depender del Time.deltatime. 
 }
