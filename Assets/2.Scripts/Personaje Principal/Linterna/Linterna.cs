@@ -8,6 +8,7 @@ public class Linterna : MonoBehaviour
     [Space]
     [SerializeField] GameObject luz;
     public float battery;
+    [SerializeField] float deductValue; // Valor 1 significa: 1 por segundo. Disminuir este valor hace que dure mas la linterna.
 
     [Header ("Audio")]
     [Space]
@@ -30,7 +31,8 @@ public class Linterna : MonoBehaviour
     {
         if (luz.activeSelf)
         {
-            battery -= Time.deltaTime;
+            //battery -= Time.deltaTime;
+            battery -= deductValue * Time.deltaTime;
         }
 
         
