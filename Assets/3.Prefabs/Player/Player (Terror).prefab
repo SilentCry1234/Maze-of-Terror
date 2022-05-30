@@ -602,7 +602,7 @@ GameObject:
   - component: {fileID: 2163761699596828487}
   - component: {fileID: 2163761699596828480}
   - component: {fileID: 2163761699596828481}
-  m_Layer: 2
+  m_Layer: 7
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -685,7 +685,7 @@ GameObject:
   - component: {fileID: 2163761699862577403}
   - component: {fileID: 2163761699862577400}
   - component: {fileID: 2163761699862577402}
-  m_Layer: 2
+  m_Layer: 7
   m_Name: Player (Terror)
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -762,7 +762,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2163761700237831083}
-  m_Layer: 2
+  m_Layer: 7
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
