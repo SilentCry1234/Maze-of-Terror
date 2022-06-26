@@ -38,9 +38,11 @@ public class Player_Controller : MonoBehaviour
     [Header("Correr con linterna")]
     [Space]
     public Transform Flashlight; 
-    Vector3 xyz; 
+    Vector3 xyz;
 
-    
+
+    public float PlayerSpeed { get => playerSpeed; } //Utilizado en Enter de PatrolMinion y PatrolBoss script
+
     void Start()
     {
         player = GetComponent<CharacterController>();
