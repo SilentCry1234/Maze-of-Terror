@@ -511,6 +511,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossAgent
       objectReference: {fileID: 0}
+    - target: {fileID: 8515669264021121828, guid: b2ebe0a57b58b9140a5f8b20f3fc2428, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8515669264021121838, guid: b2ebe0a57b58b9140a5f8b20f3fc2428, type: 3}
       propertyPath: player
       value: 
@@ -6926,6 +6930,10 @@ PrefabInstance:
     - target: {fileID: 4730139475224881893, guid: 3abd5dd4d8721084a90520cbe701ae33, type: 3}
       propertyPath: m_Name
       value: MinionAgent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730139475224881893, guid: 3abd5dd4d8721084a90520cbe701ae33, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 4730139475224881917, guid: 3abd5dd4d8721084a90520cbe701ae33, type: 3}
       propertyPath: player

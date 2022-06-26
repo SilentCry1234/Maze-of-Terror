@@ -7,6 +7,7 @@ TagManager:
   - Battery
   - BossWP
   - MinionWP
+  - Enemy
   layers:
   - Default
   - TransparentFX
