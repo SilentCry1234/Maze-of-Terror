@@ -22,10 +22,10 @@ public class StateBoss
 
     //----------------------------------------
     protected Vector3 minionPos;
-    float visibleDist = 10.0f;
-    float visibleAngle = 30.0f;
-    float attackDist = 2.5f;  //distancia de ataque
-    float timeToChase = 5.0f;
+    float visibleDist = 30.0f; //Distancia de vision
+    float visibleAngle = 40.0f; //Angulo de vision
+    float attackDist = 2.5f;  //Distancia de ataque
+    float timeToChase = 5.0f; //Tiempo de persecusion
 
     bool playerSeen;
     public bool minionCalled;
@@ -120,6 +120,7 @@ public class StateBoss
                 {
                     Debug.DrawRay(npc.transform.position, direction, Color.green);
                     playerSeen = true;
+                    //timeToChase = 5.0f;
                     return true;
                 }
             }

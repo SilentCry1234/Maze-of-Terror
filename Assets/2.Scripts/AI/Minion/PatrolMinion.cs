@@ -9,7 +9,7 @@ public class PatrolMinion : StateMinion
     public PatrolMinion(GameObject _npc, NavMeshAgent _agent, Animator _anim, Transform _player, StateBoss _boss) : base(_npc, _agent, _anim, _player, _boss)
     {
         name = STATE.PATROL;
-        agent.speed = 2; //Que tan rapido se va a mover el agente
+        agent.speed = 14.0f; //Que tan rapido se va a mover el agente
         agent.isStopped = false; //Con esto puedo detener el movimiento del agente
     }
 

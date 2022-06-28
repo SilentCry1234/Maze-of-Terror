@@ -21,8 +21,8 @@ public class StateMinion
     protected NavMeshAgent agent;
     protected StateBoss boss;
     //----------------------------------------
-    float visibleDist = 15.0f;
-    float visibleAngle = 30.0f;
+    float visibleDist = 40.0f;
+    float visibleAngle = 45.0f;
     float attackDist = 5f; //distancia de ataque, antigua 2.5
     float timeToChase = 7.0f;
 
@@ -92,6 +92,7 @@ public class StateMinion
         if (playerSeen)
         {
             timeToChase -= Time.deltaTime;
+            Debug.Log("perseguir " + timeToChase);
             if (timeToChase <= 0.0f)
             {
                 playerSeen = false;
@@ -111,6 +112,7 @@ public class StateMinion
                 {
                     Debug.DrawRay(npc.transform.position, direction, Color.green);
                     playerSeen = true;
+                    timeToChase = 7.0f;
                     return true;
                 }
             }
