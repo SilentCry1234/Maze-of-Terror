@@ -43,7 +43,7 @@ public class Player_Controller : MonoBehaviour
 
     public float PlayerSpeed { get => playerSpeed; } //Utilizado en Enter de PatrolMinion y PatrolBoss script
 
-    void Start()
+    void Awake()
     {
         player = GetComponent<CharacterController>();
         cam = FindObjectOfType<Camera>();
