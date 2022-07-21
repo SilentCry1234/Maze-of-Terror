@@ -62,7 +62,7 @@ public class Linterna : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             RaycastHit hit;
-            if (Physics.Raycast(player.position, player.forward, out hit, 5.5f))
+            if (Physics.Raycast(player.position, player.forward, out hit, 6.5f))
             {
                 if (hit.collider.gameObject.CompareTag("Battery"))
                 {

@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 4730139475224881892}
   m_Layer: 7
   m_Name: MinionAgent
-  m_TagString: Enemy
+  m_TagString: Enemy Minion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
