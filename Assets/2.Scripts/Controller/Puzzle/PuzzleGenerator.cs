@@ -7,7 +7,7 @@ public class PuzzleGenerator : MonoBehaviour
     [Header("Generador de Piezas de puzzle")]
     [SerializeField] int numberPuzzles;
     [SerializeField] GameObject puzzlePrefab;
-    [SerializeField] List<GameObject> puzzleGO;
+    [SerializeField] List<GameObject> puzzlesGO;
 
     [Header("Valores X")]
     [SerializeField] float minMapValueX;
@@ -67,7 +67,7 @@ public class PuzzleGenerator : MonoBehaviour
     }
     private void GeneratePuzzlePieces()
     {
-        puzzleGO = new List<GameObject>();
+        puzzlesGO = new List<GameObject>();
         for (int i = 0; i < numberPuzzles; i++)
         {
             int numberCycles = 0;
@@ -75,23 +75,23 @@ public class PuzzleGenerator : MonoBehaviour
             GameObject obj = (GameObject)Instantiate(puzzlePrefab);
             bool optimalPosition = false;
 
-            if (puzzleGO.Count > 0)
+            if (puzzlesGO.Count > 0)
             {
                 while (!optimalPosition) //si no tiene posicion optima, genera una nueva
                 {
                     Vector3 newPos = GeneratePosInNavMesh();
                     int batteriesOk = 0;
 
-                    for (int b = 0; b < puzzleGO.Count; b++)
+                    for (int b = 0; b < puzzlesGO.Count; b++)
                     {
-                        if (!CheckMinDistance(newPos, puzzleGO[b].transform.position))
+                        if (!CheckMinDistance(newPos, puzzlesGO[b].transform.position))
                         {
                             break;
                         }
                         else
                             batteriesOk++;
                     }
-                    if (batteriesOk == puzzleGO.Count)
+                    if (batteriesOk == puzzlesGO.Count)
                     {
                         optimalPosition = true;
                         obj.transform.position = newPos;
@@ -108,7 +108,7 @@ public class PuzzleGenerator : MonoBehaviour
             else
                 obj.transform.position = GeneratePosInNavMesh();
 
-            puzzleGO.Add(obj);
+            puzzlesGO.Add(obj);
 
 
             obj.transform.SetParent(this.transform);
