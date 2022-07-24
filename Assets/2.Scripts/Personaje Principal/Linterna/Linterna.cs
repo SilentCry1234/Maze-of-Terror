@@ -66,7 +66,7 @@ public class Linterna : MonoBehaviour
             {
                 if (hit.collider.gameObject.CompareTag("Battery"))
                 {
-                    battery += 5; 
+                    battery += 12.5f; 
 
 
                     Destroy(hit.collider.gameObject);

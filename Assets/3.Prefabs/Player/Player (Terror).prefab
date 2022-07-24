@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   luz: {fileID: 208657971406613205}
-  battery: 20
+  battery: 50
   deductValue: 1
   On_Off: {fileID: 9093285069281374139}
   cut: {fileID: 9044382326560199075}
@@ -686,6 +686,7 @@ GameObject:
   - component: {fileID: 2163761699862577403}
   - component: {fileID: 2163761699862577400}
   - component: {fileID: 2163761699862577402}
+  - component: {fileID: 2163761699349049296}
   m_Layer: 7
   m_Name: Player (Terror)
   m_TagString: Player
@@ -744,6 +745,8 @@ MonoBehaviour:
   player: {fileID: 0}
   horizontalMove: 0
   verticalMove: 0
+  playerSpeed: 12
+  runSpeed: 30
   stamina: 5
   timeToRecover: 3
   staminaMAX: 5
@@ -754,6 +757,20 @@ MonoBehaviour:
   groundDistance: 0.3
   cam: {fileID: 0}
   Flashlight: {fileID: 208657971826548322}
+--- !u!114 &2163761699349049296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2163761699862577401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0f98b3b3e997e24ba943a809e036aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  stunTime: 2
 --- !u!1 &2163761700237831080
 GameObject:
   m_ObjectHideFlags: 0

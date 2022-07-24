@@ -1,0 +1,50 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Player_Health : MonoBehaviour
+{
+    [Header ("HEALTH")]
+    [Space]
+    public float health = 500f;
+
+    [Header ("Stun")]
+    [Space]
+    public float stunTime = 2f; 
+
+    public void RestarHealth(int cantidad)
+    {
+        if(health > 0)
+        {
+            health -= cantidad;
+            StartCoroutine(StunPlayer()); 
+
+            if(health <= 0)
+            {
+                GameOver(); 
+            }
+        }
+    }
+
+
+    void GameOver()
+    {
+        Debug.Log("Me mori"); 
+    }
+
+
+    IEnumerator StunPlayer()
+    {
+        var velocidadNormal = GetComponent<Player_Controller>().playerSpeed;
+        var velocidadRun = GetComponent<Player_Controller>().runSpeed;
+
+        GetComponent<Player_Controller>().playerSpeed = 0;
+        GetComponent<Player_Controller>().runSpeed = 0;
+
+        yield return new WaitForSeconds(stunTime);
+
+        GetComponent<Player_Controller>().playerSpeed = 12f;
+        GetComponent<Player_Controller>().runSpeed = 30f;
+    }
+}

@@ -12,8 +12,8 @@ public class Player_Controller : MonoBehaviour
     [Space]
     [SerializeField] private float horizontalMove;
     [SerializeField] private float verticalMove;
-    private float playerSpeed = 12f;
-    private float runSpeed = 30f;
+    public float playerSpeed = 12f;
+    public float runSpeed = 30f;
     [SerializeField] private float stamina = 10f, timeToRecover = 5f, staminaMAX;
     Vector3 playerInput;
 

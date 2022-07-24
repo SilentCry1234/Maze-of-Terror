@@ -194,8 +194,8 @@ GameObject:
   - component: {fileID: 8515669264021121827}
   - component: {fileID: 8515669264021121826}
   - component: {fileID: 8515669264021121829}
-  - component: {fileID: 8515669264021121838}
   - component: {fileID: 8515669264021121839}
+  - component: {fileID: 8515669264021121838}
   m_Layer: 7
   m_Name: BossAgent
   m_TagString: Enemy Boss
@@ -307,20 +307,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &8515669264021121838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8515669264021121828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b24da336c2602bd48815599f31c67b5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  barrierCol: {fileID: 8515669264271133030}
 --- !u!95 &8515669264021121839
 Animator:
   serializedVersion: 4
@@ -341,6 +327,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8515669264021121838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8515669264021121828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24da336c2602bd48815599f31c67b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  barrierCol: {fileID: 8515669264271133030}
 --- !u!1 &8515669264271133048
 GameObject:
   m_ObjectHideFlags: 0
