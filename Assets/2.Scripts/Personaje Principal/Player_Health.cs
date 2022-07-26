@@ -8,10 +8,16 @@ public class Player_Health : MonoBehaviour
     [Header ("HEALTH")]
     [Space]
     public float health = 500f;
+    public Text healthText;
 
     [Header ("Stun")]
     [Space]
-    public float stunTime = 2f; 
+    public float stunTime = 2f;
+
+    private void Update()
+    {
+        healthText.text = "Health" + health.ToString("0");
+    }
 
     public void RestarHealth(int cantidad)
     {

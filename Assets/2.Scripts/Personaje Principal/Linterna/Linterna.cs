@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Linterna : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Linterna : MonoBehaviour
     [Space]
     [SerializeField] GameObject luz;
     public float battery;
+    public Text batteryText;
     [Tooltip ("Valor 1 significa: 1 por segundo. Disminuir este valor hace que dure mas la linterna.")]
     [SerializeField] float deductValue;
 
@@ -23,6 +25,7 @@ public class Linterna : MonoBehaviour
 
     void Update()
     {
+        batteryText.text = "Battery: " + battery.ToString("0");
         batteryStatus();
         batteryDown();
         chargeBattery();

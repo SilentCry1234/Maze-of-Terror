@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player_Controller : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class Player_Controller : MonoBehaviour
     public float playerSpeed = 12f;
     public float runSpeed = 30f;
     [SerializeField] private float stamina = 10f, timeToRecover = 5f, staminaMAX;
+    public Text staminaText; 
     Vector3 playerInput;
 
     [Header ("Gravedad")]
@@ -53,6 +55,7 @@ public class Player_Controller : MonoBehaviour
 
     void Update()
     {
+        staminaText.text = "Battery: " + stamina.ToString("0"); 
         SetGravity();
         Moverse();
         Mirar();
