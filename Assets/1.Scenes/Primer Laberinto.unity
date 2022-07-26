@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.0005469669, g: 0.0006048998, b: 0.30403817, a: 1}
+  m_IndirectSpecularColor: {r: 0.0005040242, g: 0.000604134, b: 0.30401957, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -727,6 +727,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 732421629}
     m_Modifications:
+    - target: {fileID: 25580598, guid: b2ebe0a57b58b9140a5f8b20f3fc2428, type: 3}
+      propertyPath: m_Name
+      value: Gafas
+      objectReference: {fileID: 0}
     - target: {fileID: 8515669264021121825, guid: b2ebe0a57b58b9140a5f8b20f3fc2428, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -793,16 +797,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8515669264021121826, guid: b2ebe0a57b58b9140a5f8b20f3fc2428, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8515669264021121828, guid: b2ebe0a57b58b9140a5f8b20f3fc2428, type: 3}
       propertyPath: m_Name
       value: BossAgent
       objectReference: {fileID: 0}
+    - target: {fileID: 8515669264021121829, guid: b2ebe0a57b58b9140a5f8b20f3fc2428, type: 3}
+      propertyPath: m_Acceleration
+      value: 32
+      objectReference: {fileID: 0}
     - target: {fileID: 8515669264021121838, guid: b2ebe0a57b58b9140a5f8b20f3fc2428, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 490242184}
+    - target: {fileID: 8515669264271133030, guid: b2ebe0a57b58b9140a5f8b20f3fc2428, type: 3}
+      propertyPath: m_Size.x
+      value: 1.8499999
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515669264271133030, guid: b2ebe0a57b58b9140a5f8b20f3fc2428, type: 3}
+      propertyPath: m_Size.z
+      value: 3.7484734
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515669264271133030, guid: b2ebe0a57b58b9140a5f8b20f3fc2428, type: 3}
+      propertyPath: m_Center.x
+      value: 0.37333727
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515669264271133030, guid: b2ebe0a57b58b9140a5f8b20f3fc2428, type: 3}
+      propertyPath: m_Center.z
+      value: 1.9364799
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515669264271133030, guid: b2ebe0a57b58b9140a5f8b20f3fc2428, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515669264271133031, guid: b2ebe0a57b58b9140a5f8b20f3fc2428, type: 3}
+      propertyPath: agentDamage
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2ebe0a57b58b9140a5f8b20f3fc2428, type: 3}
 --- !u!4 &117481460 stripped
@@ -5385,10 +5417,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 815b139771250a64d84372f6703e02b3, type: 3}
-    m_FontSize: 28
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 3
     m_AlignByGeometry: 0
@@ -9677,7 +9709,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 815b139771250a64d84372f6703e02b3, type: 3}
-    m_FontSize: 28
+    m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -10063,24 +10095,6 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!1 &1474401496 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8515669264021121828, guid: b2ebe0a57b58b9140a5f8b20f3fc2428, type: 3}
-  m_PrefabInstance: {fileID: 117481459}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1474401503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1474401496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a9a946198f5554ebebbeaf01d5f3e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cantidad: 25
 --- !u!1 &1481391697
 GameObject:
   m_ObjectHideFlags: 0
@@ -12183,7 +12197,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4730139475224881889, guid: 3abd5dd4d8721084a90520cbe701ae33, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4730139475224881890, guid: 3abd5dd4d8721084a90520cbe701ae33, type: 3}
       propertyPath: m_RootOrder
@@ -12233,11 +12247,44 @@ PrefabInstance:
       propertyPath: m_Name
       value: MinionAgent
       objectReference: {fileID: 0}
+    - target: {fileID: 4730139475224881894, guid: 3abd5dd4d8721084a90520cbe701ae33, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730139475224881894, guid: 3abd5dd4d8721084a90520cbe701ae33, type: 3}
+      propertyPath: m_Acceleration
+      value: 32
+      objectReference: {fileID: 0}
     - target: {fileID: 4730139475224881917, guid: 3abd5dd4d8721084a90520cbe701ae33, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 490242184}
-    m_RemovedComponents: []
+    - target: {fileID: 4730139476987265048, guid: 3abd5dd4d8721084a90520cbe701ae33, type: 3}
+      propertyPath: m_Size.x
+      value: 1.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730139476987265048, guid: 3abd5dd4d8721084a90520cbe701ae33, type: 3}
+      propertyPath: m_Size.z
+      value: 2.8390057
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730139476987265048, guid: 3abd5dd4d8721084a90520cbe701ae33, type: 3}
+      propertyPath: m_Center.x
+      value: -0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730139476987265048, guid: 3abd5dd4d8721084a90520cbe701ae33, type: 3}
+      propertyPath: m_Center.z
+      value: 1.4817461
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730139476987265048, guid: 3abd5dd4d8721084a90520cbe701ae33, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730139476987265051, guid: 3abd5dd4d8721084a90520cbe701ae33, type: 3}
+      propertyPath: agentDamage
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1737313421, guid: 3abd5dd4d8721084a90520cbe701ae33, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3abd5dd4d8721084a90520cbe701ae33, type: 3}
 --- !u!4 &1737313414 stripped
 Transform:

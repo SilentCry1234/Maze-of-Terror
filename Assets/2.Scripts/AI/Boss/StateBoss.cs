@@ -24,7 +24,7 @@ public class StateBoss
     protected Vector3 minionPos;
     float visibleDist = 30.0f; //Distancia de vision
     float visibleAngle = 40.0f; //Angulo de vision
-    float attackDist = 2.5f;  //Distancia de ataque
+    float attackDist = 5f;  //Distancia de ataque
     float timeToChase = 5.0f; //Tiempo de persecusion
 
     bool playerSeen;

@@ -4,19 +4,16 @@ public class AttackCollision : MonoBehaviour
 {
 
     [Header("Ataque")]
-    [SerializeField] float agentDamage;
+    [SerializeField] int agentDamage; 
+
+    //Boss Damage: 25
+    //Minion Damage: 5
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            //RestarVida al jugador...
+            other.GetComponent<Player_Health>().RestarHealth(agentDamage);
         }
-    }
-
-
-    void InfringeDamage(float playerHealth)
-    {
-        playerHealth =- agentDamage;
     }
 }

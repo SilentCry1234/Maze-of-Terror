@@ -17,7 +17,7 @@ public class PursueMinion : StateMinion
     }
     public override void Update()
     {
-        agent.SetDestination(player.position); //Si 
+        agent.SetDestination(player.position);
         if (agent.hasPath) //Significa que si esta siguiendo al jugador....
         { // 
             if (CanAttackPlayer())//Si esta cerca

@@ -36,7 +36,7 @@ public class Player_Health : MonoBehaviour
 
     void GameOver()
     {
-        Debug.Log("Me mori"); 
+        Debug.Log("Me mori xD"); 
     }
 
 

@@ -23,7 +23,7 @@ public class StateMinion
     //----------------------------------------
     float visibleDist = 40.0f;
     float visibleAngle = 45.0f;
-    float attackDist = 5f; //distancia de ataque, antigua 2.5
+    float attackDist = 7f; //distancia de ataque, antigua 2.5
     float timeToChase = 7.0f;
 
     bool playerSeen;

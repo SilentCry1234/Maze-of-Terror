@@ -55,7 +55,7 @@ public class Player_Controller : MonoBehaviour
 
     void Update()
     {
-        staminaText.text = "Battery: " + stamina.ToString("0"); 
+        staminaText.text = "Stamina: " + stamina.ToString("0"); 
         SetGravity();
         Moverse();
         Mirar();
