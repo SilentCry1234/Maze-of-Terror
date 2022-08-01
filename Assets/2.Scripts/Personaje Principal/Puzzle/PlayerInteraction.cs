@@ -45,6 +45,11 @@ public class PlayerInteraction : MonoBehaviour
                 //AgarrarPuzzle..
                 playerInventory.AddPuzzle(rayCastInfo.transform.gameObject);
             }
+
+            if (rayCastInfo.transform.gameObject.CompareTag("Altar"))
+            {
+                //Abrir interfaz de altar
+            }
         }
         Debug.DrawRay(cameraTransf.position, cameraTransf.forward * interactionDist, Color.yellow);
     }
