@@ -138,8 +138,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToRotate: {fileID: 6273227848627888117}
-  puzzleAnim: {fileID: 0}
-  puzzleNumber: 0
+  puzzleAnim: {fileID: 6273227847431408203}
+  puzzleNumber: 6
 --- !u!95 &6273227847431408203
 Animator:
   serializedVersion: 4
@@ -378,8 +378,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToRotate: {fileID: 6273227849081878349}
-  puzzleAnim: {fileID: 0}
-  puzzleNumber: 0
+  puzzleAnim: {fileID: 6273227847627855884}
+  puzzleNumber: 5
 --- !u!95 &6273227847627855884
 Animator:
   serializedVersion: 4
@@ -538,8 +538,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToRotate: {fileID: 6273227849169474277}
-  puzzleAnim: {fileID: 0}
-  puzzleNumber: 0
+  puzzleAnim: {fileID: 6273227847640911047}
+  puzzleNumber: 4
 --- !u!95 &6273227847640911047
 Animator:
   serializedVersion: 4
@@ -930,8 +930,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToRotate: {fileID: 6273227847900919248}
-  puzzleAnim: {fileID: 0}
-  puzzleNumber: 0
+  puzzleAnim: {fileID: 6273227848025422533}
+  puzzleNumber: 1
 --- !u!95 &6273227848025422533
 Animator:
   serializedVersion: 4
@@ -1090,8 +1090,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToRotate: {fileID: 6273227848231690249}
-  puzzleAnim: {fileID: 0}
-  puzzleNumber: 0
+  puzzleAnim: {fileID: 6273227848219525722}
+  puzzleNumber: 2
 --- !u!95 &6273227848219525722
 Animator:
   serializedVersion: 4
@@ -2225,8 +2225,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToRotate: {fileID: 6273227847691374898}
-  puzzleAnim: {fileID: 0}
-  puzzleNumber: 0
+  puzzleAnim: {fileID: 6273227849328471204}
+  puzzleNumber: 3
 --- !u!95 &6273227849328471204
 Animator:
   serializedVersion: 4

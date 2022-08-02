@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 3742062437850687431}
   - component: {fileID: 3742062437850687424}
   - component: {fileID: 3742062437850687425}
+  - component: {fileID: 1851580109}
   m_Layer: 0
   m_Name: Altar
-  m_TagString: Untagged
+  m_TagString: Altar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,3 +98,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1851580109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3742062437850687427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adb8958e64c6fa34da7d01816acdd301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransf: {fileID: 0}
+  altarTransf: {fileID: 3742062437850687426}
+  puzzleUIAnim: {fileID: 0}
+  minInteracDis: 5
+  puzzlesInteraction:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

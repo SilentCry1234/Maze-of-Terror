@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/1.Scenes/Menu Principal.unity
+    guid: c88b68f6b929abb4a810356445885e87
+  - enabled: 1
     path: Assets/1.Scenes/Primer Laberinto.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

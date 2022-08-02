@@ -688,6 +688,8 @@ GameObject:
   - component: {fileID: 2163761699862577400}
   - component: {fileID: 2163761699862577402}
   - component: {fileID: 2163761699349049296}
+  - component: {fileID: 535462993}
+  - component: {fileID: 535462994}
   m_Layer: 7
   m_Name: Player (Terror)
   m_TagString: Player
@@ -774,6 +776,34 @@ MonoBehaviour:
   health: 500
   healthText: {fileID: 0}
   stunTime: 2
+--- !u!114 &535462993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2163761699862577401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5132a06d6b8bd4bb206ab86bb9b682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryGOs: []
+--- !u!114 &535462994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2163761699862577401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c84648c9a3413354bbd97b8f24f3699c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionDist: 5
+  cameraTransf: {fileID: 2163761698960474809}
+  interactionKey: 0
 --- !u!1 &2163761700237831080
 GameObject:
   m_ObjectHideFlags: 0
