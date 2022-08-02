@@ -10,6 +10,7 @@ TagManager:
   - Enemy Boss
   - Enemy Minion
   - PPuzzle
+  - Altar
   layers:
   - Default
   - TransparentFX

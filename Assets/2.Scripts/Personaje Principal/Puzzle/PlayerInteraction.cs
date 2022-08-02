@@ -13,10 +13,12 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] KeyCode interactionKey;
 
     private PlayerInventory playerInventory;
+    private PuzzleAltar puzzleAltar;
 
     private void Awake()
     {
         playerInventory = FindObjectOfType<PlayerInventory>();
+        puzzleAltar = FindObjectOfType<PuzzleAltar>();
 
         interactionKey = KeyCode.E;
     }
@@ -46,9 +48,10 @@ public class PlayerInteraction : MonoBehaviour
                 playerInventory.AddPuzzle(rayCastInfo.transform.gameObject);
             }
 
-            if (rayCastInfo.transform.gameObject.CompareTag("Altar"))
+            if (rayCastInfo.transform.gameObject.CompareTag("Altar") && !puzzleAltar.PuzzleUIOpened)
             {
-                //Abrir interfaz de altar
+                puzzleAltar.ActivatePuzzleUI();
+                StartCoroutine(puzzleAltar.SetPuzzlePiece());
             }
         }
         Debug.DrawRay(cameraTransf.position, cameraTransf.forward * interactionDist, Color.yellow);
