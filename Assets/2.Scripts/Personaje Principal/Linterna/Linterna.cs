@@ -25,7 +25,7 @@ public class Linterna : MonoBehaviour
 
     void Update()
     {
-        batteryText.text = "Battery: " + battery.ToString("0");
+        batteryText.text = "BATTERY: " + battery.ToString("0");
         batteryStatus();
         batteryDown();
         chargeBattery();

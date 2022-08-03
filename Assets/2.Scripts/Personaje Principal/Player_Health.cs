@@ -22,7 +22,7 @@ public class Player_Health : MonoBehaviour
 
     private void Update()
     {
-        healthText.text = "Health: " + health.ToString("0");
+        healthText.text = "HEALTH: " + health.ToString("0");
     }
 
     public void RestarHealth(int cantidad)
