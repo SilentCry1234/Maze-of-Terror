@@ -9,10 +9,16 @@ public class Player_Health : MonoBehaviour
     [Space]
     public float health = 500f;
     public Text healthText;
+    public GameObject gameOver;
 
     [Header ("Stun")]
     [Space]
     public float stunTime = 2f;
+
+    private void Awake()
+    {
+        gameOver.SetActive(false);
+    }
 
     private void Update()
     {
@@ -36,7 +42,9 @@ public class Player_Health : MonoBehaviour
 
     void GameOver()
     {
-        Debug.Log("Me mori xD"); 
+        Debug.Log("Me mori xD");
+        Time.timeScale = 0; 
+        gameOver.SetActive(true);
     }
 
 

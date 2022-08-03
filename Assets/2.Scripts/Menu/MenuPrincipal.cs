@@ -11,7 +11,8 @@ public class MenuPrincipal : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(laberynth); 
+        SceneManager.LoadScene(laberynth);
+        Time.timeScale = 1; 
     }
 
     public void OptionsEntrar()
