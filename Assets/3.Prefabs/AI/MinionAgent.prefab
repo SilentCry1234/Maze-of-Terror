@@ -279,7 +279,6 @@ GameObject:
   - component: {fileID: 4730139475224881894}
   - component: {fileID: 4730139475224881892}
   - component: {fileID: 4730139475224881917}
-  - component: {fileID: 1737313421}
   m_Layer: 7
   m_Name: MinionAgent
   m_TagString: Enemy Minion
@@ -364,7 +363,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4730139475224881893}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 1.0505257
   m_Height: 3.759035
@@ -379,9 +378,9 @@ NavMeshAgent:
   m_GameObject: {fileID: 4730139475224881893}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
-  m_Acceleration: 16
+  m_Acceleration: 32
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 1
@@ -425,19 +424,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
---- !u!114 &1737313421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4730139475224881893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a9a946198f5554ebebbeaf01d5f3e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cantidad: 5
 --- !u!1 &4730139476987265054
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,11 +465,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4730139476987265054}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 1.1926594, y: 0.9377545, z: 2.3008382}
-  m_Center: {x: 0.37333727, y: 0, z: 1.2126623}
+  m_Size: {x: 1.85, y: 0.9377545, z: 2.8390057}
+  m_Center: {x: -0.06, y: 0, z: 1.4817461}
 --- !u!114 &4730139476987265051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -496,4 +482,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aba578e4e26796248a25a6daf4dff97b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentDamage: 20
+  agentDamage: 5

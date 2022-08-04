@@ -775,6 +775,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 500
   healthText: {fileID: 0}
+  gameOver: {fileID: 0}
   stunTime: 2
 --- !u!114 &535462993
 MonoBehaviour:
