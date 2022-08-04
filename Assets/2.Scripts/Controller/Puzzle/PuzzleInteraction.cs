@@ -33,21 +33,27 @@ public class PuzzleInteraction : MonoBehaviour, IPointerEnterHandler, IPointerEx
 
     void CheckSpritePos()
     {
+        //Debug.Log(this.gameObject.name + "Correct pos " + objectToRotate.transform.rotation.eulerAngles.z);
         switch (objectToRotate.transform.rotation.eulerAngles.z)
         {
-            case 0:
+            case >= 270: //Equivalente a -90
+                correctPuzzlePos = false;
+                break;
+            case >= 180:
+                correctPuzzlePos = false;
+                break;
+            case >= 90:
+                correctPuzzlePos = false;
+                break;
+            case >= 0:
                 correctPuzzlePos = true;
                 break;
-            case 90:
-                correctPuzzlePos = false;
-                break;
-            case -90:
-                correctPuzzlePos = false;
-                break;
-            case 180:
+
+            default:
                 correctPuzzlePos = false;
                 break;
         }
+        //Debug.Log(this.gameObject.name + "Correct pos " + correctPuzzlePos);
     }
     void CheckMouseInput()
     {
@@ -63,7 +69,7 @@ public class PuzzleInteraction : MonoBehaviour, IPointerEnterHandler, IPointerEx
 
     public void ActivatePuzzleAnim(int puzz) //Activado en puzzle Altar
     {
-        if(puzz == puzzleNumber)
+        if (puzz == puzzleNumber)
         {
             SetInitialRotation();
             puzzleAnim.SetBool("Expand", true);
@@ -74,7 +80,7 @@ public class PuzzleInteraction : MonoBehaviour, IPointerEnterHandler, IPointerEx
     {
         int random = Random.Range(0, 3);
 
-        switch(random)
+        switch (random)
         {
             case 0:
                 objectToRotate.transform.rotation = Quaternion.Euler(0, 0, 90);

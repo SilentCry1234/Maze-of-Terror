@@ -17,11 +17,4 @@ public class PlayerInventory : MonoBehaviour
     {
         inventoryGOs.Remove(go);
     }
-    public List<GameObject> ObtainInventory()
-    {
-        if (inventoryGOs != null)
-            return inventoryGOs;
-        else
-            return null;
-    }
 }

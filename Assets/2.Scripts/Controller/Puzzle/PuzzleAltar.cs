@@ -20,6 +20,8 @@ public class PuzzleAltar : MonoBehaviour
 
     private PlayerInventory playerInventory;
 
+
+    private bool puzzleCompleted;
     private bool puzzleUIOpened;
     public bool PuzzleUIOpened { get => puzzleUIOpened; }
 
@@ -30,6 +32,7 @@ public class PuzzleAltar : MonoBehaviour
 
     private void Update()
     {
+        CheckPuzzlePos();
         DisableAltarUI();
     }
 
@@ -54,11 +57,34 @@ public class PuzzleAltar : MonoBehaviour
                     puzzlesInteraction[i].ActivatePuzzleAnim(num);
                 }
 
-                //playerInventory.RemovePuzzle(go);
+                playerInventory.RemovePuzzle(go);
             }
         }
     }
 
+    void CheckPuzzlePos()
+    {
+        if (/*!puzzleCompleted && */puzzleUIOpened)
+        {
+            int correctPuzzle = 0;
+
+            for (int i = 0; i < puzzlesInteraction.Count; i++)
+            {
+                if (puzzlesInteraction[i].CorrectPuzzlePos)
+                {
+                    correctPuzzle++;
+                    Debug.Log("CPuzzle= " + correctPuzzle);
+                }
+            }
+
+            if (correctPuzzle == puzzlesInteraction.Count)
+            {
+                puzzleCompleted = true; //Si el puzzle esta completo.... el GameManager activa la victoria
+            }
+            else
+                puzzleCompleted = false;
+        }
+    }
 
     void DisableAltarUI()
     { 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.0005469669, g: 0.0006048998, b: 0.30403817, a: 1}
+  m_IndirectSpecularColor: {r: 0.0005040242, g: 0.000604134, b: 0.30401957, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -724,6 +724,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6273227847691374897, guid: 69a70bcf42052b44c96ecff94235bbf3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6273227847691374897, guid: 69a70bcf42052b44c96ecff94235bbf3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6273227847691374897, guid: 69a70bcf42052b44c96ecff94235bbf3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6273227847900919263, guid: 69a70bcf42052b44c96ecff94235bbf3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6273227847900919263, guid: 69a70bcf42052b44c96ecff94235bbf3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6273227847900919263, guid: 69a70bcf42052b44c96ecff94235bbf3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 6273227848025422650, guid: 69a70bcf42052b44c96ecff94235bbf3, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -771,6 +795,30 @@ PrefabInstance:
     - target: {fileID: 6273227848219525723, guid: 69a70bcf42052b44c96ecff94235bbf3, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6273227848231690248, guid: 69a70bcf42052b44c96ecff94235bbf3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6273227848231690248, guid: 69a70bcf42052b44c96ecff94235bbf3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6273227848231690248, guid: 69a70bcf42052b44c96ecff94235bbf3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6273227848627888116, guid: 69a70bcf42052b44c96ecff94235bbf3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6273227848627888116, guid: 69a70bcf42052b44c96ecff94235bbf3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6273227848627888116, guid: 69a70bcf42052b44c96ecff94235bbf3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6273227848720400098, guid: 69a70bcf42052b44c96ecff94235bbf3, type: 3}
       propertyPath: m_Pivot.x
@@ -859,6 +907,30 @@ PrefabInstance:
     - target: {fileID: 6273227848720400102, guid: 69a70bcf42052b44c96ecff94235bbf3, type: 3}
       propertyPath: m_Name
       value: CanvasPuzzle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6273227849081878348, guid: 69a70bcf42052b44c96ecff94235bbf3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6273227849081878348, guid: 69a70bcf42052b44c96ecff94235bbf3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6273227849081878348, guid: 69a70bcf42052b44c96ecff94235bbf3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6273227849169474276, guid: 69a70bcf42052b44c96ecff94235bbf3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6273227849169474276, guid: 69a70bcf42052b44c96ecff94235bbf3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6273227849169474276, guid: 69a70bcf42052b44c96ecff94235bbf3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6273227849328471205, guid: 69a70bcf42052b44c96ecff94235bbf3, type: 3}
       propertyPath: m_AnchorMax.y
@@ -14618,16 +14690,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 490242184}
     - target: {fileID: 4730139476987265048, guid: 3abd5dd4d8721084a90520cbe701ae33, type: 3}
+      propertyPath: m_Size.y
+      value: 1.6886153
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730139476987265048, guid: 3abd5dd4d8721084a90520cbe701ae33, type: 3}
       propertyPath: m_Size.z
-      value: 2.880504
+      value: 4.621519
       objectReference: {fileID: 0}
     - target: {fileID: 4730139476987265048, guid: 3abd5dd4d8721084a90520cbe701ae33, type: 3}
       propertyPath: m_Center.x
-      value: -0.060000174
+      value: -0.06000245
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730139476987265048, guid: 3abd5dd4d8721084a90520cbe701ae33, type: 3}
+      propertyPath: m_Center.y
+      value: -0.37543023
       objectReference: {fileID: 0}
     - target: {fileID: 4730139476987265048, guid: 3abd5dd4d8721084a90520cbe701ae33, type: 3}
       propertyPath: m_Center.z
-      value: 1.5024939
+      value: 2.3729916
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3abd5dd4d8721084a90520cbe701ae33, type: 3}
@@ -18656,7 +18736,7 @@ MonoBehaviour:
   - {fileID: 625329132}
   - {fileID: 456932372}
   - {fileID: 1693087170}
-  invokeTimes: 010000000500000001000000050000000100000005000000
+  invokeTimes: 000000000000000000000000000000000000000000000000
 --- !u!1 &5017596599527951991
 GameObject:
   m_ObjectHideFlags: 0
