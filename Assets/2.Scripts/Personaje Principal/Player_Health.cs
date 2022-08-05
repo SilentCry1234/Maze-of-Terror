@@ -29,12 +29,13 @@ public class Player_Health : MonoBehaviour
     {
         if(health > 0)
         {
-
-            health -= cantidad;
+            AudioManager.instance.PlayAudio(AudioManager.instance.player_Hit); 
+            health -= cantidad; 
             StartCoroutine(StunPlayer()); 
 
             if(health <= 0)
             {
+                AudioManager.instance.PlayAudio(AudioManager.instance.playerDeath);
                 GameOver(); 
             }
         }
