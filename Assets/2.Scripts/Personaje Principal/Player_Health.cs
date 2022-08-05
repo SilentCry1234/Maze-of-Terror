@@ -29,6 +29,7 @@ public class Player_Health : MonoBehaviour
     {
         if(health > 0)
         {
+
             health -= cantidad;
             StartCoroutine(StunPlayer()); 
 
