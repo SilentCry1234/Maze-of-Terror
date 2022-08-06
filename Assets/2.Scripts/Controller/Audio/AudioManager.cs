@@ -12,7 +12,7 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager instance; 
 
-    [Range(-80f, 20f)]
+    [Range(-20f, 20f)]
     public float masterVol, effectsVol;
     public Slider masterSlider, effectsSlider;
 
@@ -29,7 +29,6 @@ public class AudioManager : MonoBehaviour
         }
 
         PlayAudio(backgroundMusic);
-
     }
 
     void Start()
@@ -37,10 +36,10 @@ public class AudioManager : MonoBehaviour
         masterSlider.value = masterVol;
         effectsSlider.value = effectsVol;
 
-        masterSlider.minValue = -80f;
+        masterSlider.minValue = -20f;
         masterSlider.maxValue = 20f;
 
-        effectsSlider.minValue = -80f;
+        effectsSlider.minValue = -20f;
         effectsSlider.maxValue = 20f;
     }
 
