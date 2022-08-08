@@ -7,6 +7,7 @@ public class MenuPrincipal : MonoBehaviour
 {
     public int laberynth;
     public GameObject options;
+    public GameObject credits; 
 
 
     public void StartGame()
@@ -23,6 +24,16 @@ public class MenuPrincipal : MonoBehaviour
     public void OptionsSalir()
     {
         options.SetActive(false); 
+    }
+
+    public void showCredits()
+    {
+        credits.SetActive(true);
+    }
+
+    public void hideCredits()
+    {
+        credits.SetActive(false);
     }
 
     public void Quit()
