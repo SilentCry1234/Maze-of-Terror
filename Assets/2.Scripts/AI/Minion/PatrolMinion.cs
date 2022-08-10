@@ -76,6 +76,8 @@ public class PatrolMinion : StateMinion
         else if (CanSeePlayer() && isAnimActive(anim, "MinionPatrol", 0))
         {
             GameEnvironment.Singleton.CallBoss(npc.transform.position);
+            if (AudioIA.Instance != null)
+                AudioIA.Instance.PlayMinionGrowlSound();
             nextState = new PursueMinion(npc, agent, anim, player, boss);
             stage = EVENT.EXIT;
         }

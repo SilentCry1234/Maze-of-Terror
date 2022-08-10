@@ -62,7 +62,7 @@ public class StateMinion
     /// <param name="animLayer"></param>
     /// <param name="loopTime"></param>
     /// <returns></returns>
-    public bool isPlaying(Animator anim, string stateName, int animLayer, float loopTime) //Si Loop time es 1, reproduce la anim 1 vez
+    public bool isAnimActive(Animator anim, string stateName, int animLayer, float loopTime) //Si Loop time es 1, reproduce la anim 1 vez
     {
         if (anim.GetCurrentAnimatorStateInfo(animLayer).IsName(stateName) &&
                 anim.GetCurrentAnimatorStateInfo(animLayer).normalizedTime < loopTime)

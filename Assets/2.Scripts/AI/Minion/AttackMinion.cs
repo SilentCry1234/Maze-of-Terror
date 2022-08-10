@@ -14,7 +14,10 @@ public class AttackMinion : StateMinion
     {
         anim.SetBool("Attacking", true);
         isAttacking = true;
-        agent.isStopped = true; //Quiero detener el movimiento del npc al disparar
+        agent.isStopped = true; //Quiero detener el movimiento del npc al atacar
+
+        if (AudioIA.Instance != null)
+        AudioIA.Instance.PlayMinionAttackSound();
         base.Enter();
     }
 

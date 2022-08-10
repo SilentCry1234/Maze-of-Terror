@@ -7,12 +7,12 @@ public class PlayerInventory : MonoBehaviour
     [Header("Inventario del jugador")]
     [SerializeField] List<GameObject> inventoryGOs;
 
-    private AudioBoss audioBoss;
+    private AudioIA audioBoss;
     public List<GameObject> InventoryGOs { get => inventoryGOs; }
 
     private void Awake()
     {
-        audioBoss = FindObjectOfType<AudioBoss>();
+        audioBoss = FindObjectOfType<AudioIA>();
     }
     public void AddPuzzle(GameObject go)
     {
@@ -31,11 +31,11 @@ public class PlayerInventory : MonoBehaviour
         {
             case 3:
                 GameEnvironment.Singleton.PhaseNumber = 2;
-                audioBoss.PlayGrowlPhase(GameEnvironment.Singleton.PhaseNumber);
+                audioBoss.PlayBossGrowlPhase(GameEnvironment.Singleton.PhaseNumber);
                 break;
             case 6:
                 GameEnvironment.Singleton.PhaseNumber = 3;
-                audioBoss.PlayGrowlPhase(GameEnvironment.Singleton.PhaseNumber);
+                audioBoss.PlayBossGrowlPhase(GameEnvironment.Singleton.PhaseNumber);
                 break;
         }
     }

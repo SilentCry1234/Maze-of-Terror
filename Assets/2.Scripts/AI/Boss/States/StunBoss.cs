@@ -47,7 +47,7 @@ public class StunBoss : StateBoss
                 isStunned = false;
             }
         }
-        else if (!isStunned && !isPlaying(anim, "BossAttack", 0, 1.0f)) //SI no esta inmovilizado, vuelve a patrullar
+        else if (!isStunned && !isAnimActive(anim, "BossAttack", 0, 1.0f)) //SI no esta inmovilizado, vuelve a patrullar
         {
             Debug.Log("CHANGE");
             nextState = new PatrolBoss(npc, agent, anim, player);
