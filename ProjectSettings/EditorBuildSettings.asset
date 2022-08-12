@@ -6,9 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/1.Scenes/Menu Principal.unity
+    path: Assets/1.Scenes/Escenas Importantes/Menu Principal.unity
     guid: c88b68f6b929abb4a810356445885e87
+  - enabled: 1
+    path: Assets/1.Scenes/Escenas Importantes/Tuto y Comic.unity
+    guid: 7c4b710097ff22c4caed4f547c89f61a
   - enabled: 1
     path: Assets/1.Scenes/Primer Laberinto.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/1.Scenes/Segundo Laberinto.unity
+    guid: ef81aefd5c3bb264eb2451c7ff997a31
+  - enabled: 1
+    path: Assets/1.Scenes/Tercer Laberinto.unity
+    guid: 40fd05a2a30ac4140bd6aa5c2606b476
+  - enabled: 1
+    path: Assets/1.Scenes/Cuarto Laberinto.unity
+    guid: c5375a11186fe724aa4ccabc6cd083e2
+  - enabled: 1
+    path: Assets/1.Scenes/Quinto Laberinto.unity
+    guid: 93f92eeddee34994cbb8d6a7c761dad1
+  - enabled: 1
+    path: Assets/1.Scenes/Sexto Laberinto.unity
+    guid: 2cfe251ff577d89459ebe516aaeb24dc
   m_configObjects: {}
