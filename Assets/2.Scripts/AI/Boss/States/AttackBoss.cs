@@ -17,6 +17,9 @@ public class AttackBoss : StateBoss
         anim.SetBool("isAttacking", true); //anim de ataque
         agent.isStopped = true; //Quiero detener el movimiento del npc al disparar
         isAttacking = true;
+
+        if (AudioIA.Instance != null)
+            AudioIA.Instance.PlayBossAttackSound();
         base.Enter();
     }
 

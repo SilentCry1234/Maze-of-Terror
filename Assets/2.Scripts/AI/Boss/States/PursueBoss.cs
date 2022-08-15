@@ -12,13 +12,19 @@ public class PursueBoss : StateBoss
     public override void Enter()
     {
         anim.SetBool("isRunning", true);
+        if (AudioIA.Instance != null)
+        {
+            Debug.Log("Perseguir");
+            AudioIA.Instance.PlayBossSurpriseSound();
+        }
         base.Enter();
     }
     public override void Update()
     {
         agent.SetDestination(player.position); //Si 
         if (agent.hasPath) //Significa que si esta siguiendo al jugador....
-        {  
+        {
+            Debug.Log("PlayerVisto" + playerSeen);
             if (CanAttackPlayer())//Si esta cerca
             {
                 nextState = new AttackBoss(npc, agent, anim, player);
@@ -26,6 +32,8 @@ public class PursueBoss : StateBoss
             }
             else if (!CanSeePlayer()) //Si no vemos al jugador, volver a patrullar
             {
+                
+                Debug.Log("NoPerseguir");
                 nextState = new PatrolBoss(npc, agent, anim, player);
                 stage = EVENT.EXIT;
             }

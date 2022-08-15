@@ -27,7 +27,7 @@ public class StateBoss
     float attackDist = 5f;  //Distancia de ataque
     float timeToChase = 5.0f; //Tiempo de persecusion
 
-    bool playerSeen;
+    protected bool playerSeen;
     public bool minionCalled;
     public bool hasMinionCall;
 

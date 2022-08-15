@@ -20,7 +20,7 @@ public class PuzzleInteraction : MonoBehaviour, IPointerEnterHandler, IPointerEx
     private void Update()
     {
         CheckSpritePos();
-        CheckMouseInput();
+        CheckInput(Input.GetKeyDown(KeyCode.Mouse0), Input.GetKeyDown(KeyCode.Mouse1));
     }
     private void RotateLeft()
     {
@@ -33,7 +33,7 @@ public class PuzzleInteraction : MonoBehaviour, IPointerEnterHandler, IPointerEx
 
     void CheckSpritePos()
     {
-        //Debug.Log(this.gameObject.name + "Correct pos " + objectToRotate.transform.rotation.eulerAngles.z);
+        Debug.Log(this.gameObject.name + "Correct pos " + objectToRotate.transform.rotation.eulerAngles.z);
         switch (objectToRotate.transform.rotation.eulerAngles.z)
         {
             case >= 270: //Equivalente a -90
@@ -55,13 +55,13 @@ public class PuzzleInteraction : MonoBehaviour, IPointerEnterHandler, IPointerEx
         }
         //Debug.Log(this.gameObject.name + "Correct pos " + correctPuzzlePos);
     }
-    void CheckMouseInput()
+    void CheckInput(bool input1, bool input2)
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && mouseOverUI)
+        if (input1 && mouseOverUI)
         {
             RotateLeft();
         }
-        if (Input.GetKeyDown(KeyCode.Mouse1) && mouseOverUI)
+        if (input2 && mouseOverUI)
         {
             RotateRight();
         }

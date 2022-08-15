@@ -5,8 +5,10 @@ public class AudioIA : MonoBehaviour
     [Header("Sonidos del boss")]
     [SerializeField] AudioSource bossAttackAS;
     [SerializeField] AudioSource bossGrowlAS;
+    [SerializeField] AudioSource bossSurpriseAS;
     [Space]
     [SerializeField] AudioClip bossAttackAC;
+    [SerializeField] AudioClip bossSurpriseAC;
     [SerializeField] AudioClip bossGrowlPhase2AC;
     [SerializeField] AudioClip bossGrowlPhase3AC;
 
@@ -65,6 +67,10 @@ public class AudioIA : MonoBehaviour
         Debug.Log("MGrowl");
         minionGrowlAS.PlayOneShot(minionGrowl);
     }
+    public void PlayBossSurpriseSound()
+    {
+        bossSurpriseAS.PlayOneShot(bossSurpriseAC, 0.5f);
+    }    
     public void PlayBossGrowlPhase(int phase) //utilizado al cambiar de fase en playerInventory
     {
         switch (phase)

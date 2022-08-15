@@ -25,11 +25,11 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Update()
     {
-        Interact();
+        Interact(Input.GetKeyDown(interactionKey));
     }
-    void Interact()
+    void Interact(bool input)
     {
-        if (Input.GetKeyDown(interactionKey))
+        if (input)
         {
             CastRay();
         }
