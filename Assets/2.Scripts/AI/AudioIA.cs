@@ -37,18 +37,6 @@ public class AudioIA : MonoBehaviour
         }
     }
 
-    //public static AudioIA Singleton
-    //{
-    //    get
-    //    {
-    //        if (instance == null)
-    //        {
-    //            instance = this;
-    //        }
-    //        return instance;
-    //    }
-    //}
-
     #region Attacks
     public void PlayMinionAttackSound() //Utilizado al inicio de la anim. de ataque
     {

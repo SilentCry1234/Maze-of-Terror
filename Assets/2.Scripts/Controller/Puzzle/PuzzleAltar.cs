@@ -24,6 +24,7 @@ public class PuzzleAltar : MonoBehaviour
     private bool puzzleCompleted;
     private bool puzzleUIOpened;
     public bool PuzzleUIOpened { get => puzzleUIOpened; }
+    public bool PuzzleCompleted { get => puzzleCompleted; }
 
     private void Awake()
     {
@@ -64,7 +65,7 @@ public class PuzzleAltar : MonoBehaviour
 
     void CheckPuzzlePos()
     {
-        if (/*!puzzleCompleted && */puzzleUIOpened)
+        if (puzzleUIOpened && !puzzleCompleted)
         {
             int correctPuzzle = 0;
 

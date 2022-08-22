@@ -33,7 +33,6 @@ public class PuzzleInteraction : MonoBehaviour, IPointerEnterHandler, IPointerEx
 
     void CheckSpritePos()
     {
-        Debug.Log(this.gameObject.name + "Correct pos " + objectToRotate.transform.rotation.eulerAngles.z);
         switch (objectToRotate.transform.rotation.eulerAngles.z)
         {
             case >= 270: //Equivalente a -90
@@ -53,10 +52,11 @@ public class PuzzleInteraction : MonoBehaviour, IPointerEnterHandler, IPointerEx
                 correctPuzzlePos = false;
                 break;
         }
-        //Debug.Log(this.gameObject.name + "Correct pos " + correctPuzzlePos);
     }
     void CheckInput(bool input1, bool input2)
     {
+        if (correctPuzzlePos) return;
+
         if (input1 && mouseOverUI)
         {
             RotateLeft();
