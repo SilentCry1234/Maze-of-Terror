@@ -29,6 +29,8 @@ public class PuzzleAltar : MonoBehaviour
     private void Awake()
     {
         playerInventory = FindObjectOfType<PlayerInventory>();
+
+        //Hacer FindObjectOfType para buscar al player y al altar 
     }
 
     private void Update()
@@ -47,19 +49,27 @@ public class PuzzleAltar : MonoBehaviour
     {
         yield return new WaitForSeconds(0.15f);
 
-        if (playerInventory.InventoryGOs != null)
+        // preguntar si existe el playerInventory
+        if(playerInventory)
         {
-            foreach (GameObject go in playerInventory.InventoryGOs.ToArray())
+            if (playerInventory.InventoryGOs != null)
             {
-                int num = go.GetComponent<PuzzlePiece>().PuzzleNumber;
-
-                for (int i = 0; i < puzzlesInteraction.Count; i++)
+                foreach (GameObject go in playerInventory.InventoryGOs.ToArray())
                 {
-                    puzzlesInteraction[i].ActivatePuzzleAnim(num);
-                }
+                    int num = go.GetComponent<PuzzlePiece>().PuzzleNumber;
 
-                playerInventory.RemovePuzzle(go);
+                    for (int i = 0; i < puzzlesInteraction.Count; i++)
+                    {
+                        puzzlesInteraction[i].ActivatePuzzleAnim(num);
+                    }
+
+                    playerInventory.RemovePuzzle(go);
+                }
             }
+        }
+        else
+        {
+            Debug.LogWarning("Algo falta (guia)");
         }
     }
 
