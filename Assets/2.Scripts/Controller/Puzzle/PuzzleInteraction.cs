@@ -12,6 +12,8 @@ public class PuzzleInteraction : MonoBehaviour, IPointerEnterHandler, IPointerEx
     [SerializeField] int puzzleNumber;
 
 
+
+
     private bool mouseOverUI;
     private bool correctPuzzlePos;
 
@@ -20,7 +22,7 @@ public class PuzzleInteraction : MonoBehaviour, IPointerEnterHandler, IPointerEx
     private void Update()
     {
         CheckSpritePos();
-        CheckInput(Input.GetKeyDown(KeyCode.Mouse0), Input.GetKeyDown(KeyCode.Mouse1));
+        CheckInput(Input.GetKeyDown(KeyCode.Mouse0), Input.GetKeyDown(KeyCode.Mouse1)); //Para poder expandir el codigo, pido el input por parametro, asi no queda atado al teclado o dispositivo
     }
     private void RotateLeft()
     {
@@ -53,7 +55,7 @@ public class PuzzleInteraction : MonoBehaviour, IPointerEnterHandler, IPointerEx
                 break;
         }
     }
-    void CheckInput(bool input1, bool input2)
+    void CheckInput(bool input1, bool input2) //Ver si se puede unificar con PlayerInteraction
     {
         if (correctPuzzlePos) return;
 

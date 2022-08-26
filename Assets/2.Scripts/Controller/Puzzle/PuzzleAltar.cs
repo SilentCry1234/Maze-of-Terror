@@ -17,6 +17,12 @@ public class PuzzleAltar : MonoBehaviour
     [Header("Puzzles UI")]
     [SerializeField] List<PuzzleInteraction> puzzlesInteraction;
 
+    [Space]
+    [Header("Audio de altar UI")]
+    [SerializeField] AudioSource altarUIAS;
+    [Space]
+    [SerializeField] AudioClip openAC;
+    [SerializeField] AudioClip closeAC;
 
     private PlayerInventory playerInventory;
 
@@ -43,6 +49,8 @@ public class PuzzleAltar : MonoBehaviour
     {
         puzzleUIOpened = true;
         puzzleUIAnim.SetBool("Expand", true);
+
+        altarUIAS.PlayOneShot(openAC, 1.5f);
     }
 
     public IEnumerator SetPuzzlePiece()
@@ -50,7 +58,7 @@ public class PuzzleAltar : MonoBehaviour
         yield return new WaitForSeconds(0.15f);
 
         // preguntar si existe el playerInventory
-        if(playerInventory)
+        if (playerInventory)
         {
             if (playerInventory.InventoryGOs != null)
             {
@@ -98,11 +106,13 @@ public class PuzzleAltar : MonoBehaviour
     }
 
     void DisableAltarUI()
-    { 
-        if (Vector3.Distance(playerTransf.position, altarTransf.position) > minInteracDis)
+    {
+        if (Vector3.Distance(playerTransf.position, altarTransf.position) > minInteracDis && puzzleUIOpened)
         {
             puzzleUIAnim.SetBool("Expand", false);
             puzzleUIOpened = false;
+
+            altarUIAS.PlayOneShot(closeAC, 1.5f);
         }
     }
 }

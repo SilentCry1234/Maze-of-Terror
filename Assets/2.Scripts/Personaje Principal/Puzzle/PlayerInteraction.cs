@@ -27,7 +27,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         Interact(Input.GetKeyDown(interactionKey));
     }
-    void Interact(bool input)
+    void Interact(bool input) //Puede implementarse con PuzzleInteraction
     {
         if (input)
         {
