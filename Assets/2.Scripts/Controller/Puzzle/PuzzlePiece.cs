@@ -7,5 +7,5 @@ public class PuzzlePiece : MonoBehaviour
     [Header("Numero de pieza")]
     [SerializeField] int puzzleNumber;
 
-    public int PuzzleNumber { get => puzzleNumber; }
+    public int PuzzleNumber { get => puzzleNumber; set => puzzleNumber = value; }
 }

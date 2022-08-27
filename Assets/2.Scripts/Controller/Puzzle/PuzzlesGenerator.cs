@@ -28,12 +28,13 @@ public class PuzzlesGenerator : MonoBehaviour
 
     [Space]
     [Header("Numero de piezas de puzzle")]
-    [SerializeField] List<GameObject> puzzlesGO;
+    [SerializeField] int puzzlePiecesAmount;
+    [SerializeField] List<GameObject> puzzlesGOPrefab;
 
     [SerializeField] List<int> invokeTimes; //Tiempos a esperar entre la invocacion de pieza y pieza
 
     private CancellationTokenSource tokenSource; //Necesario para cancelar Task
-
+    private List<GameObject> puzzlePieces;
     private void Awake()
     {
         tokenSource = new CancellationTokenSource();
@@ -41,6 +42,7 @@ public class PuzzlesGenerator : MonoBehaviour
 
     private void Start()
     {
+        GeneratePuzzlesPieces();
         SecuencialPuzzles();
     }
     private void OnDisable()
@@ -48,13 +50,42 @@ public class PuzzlesGenerator : MonoBehaviour
         tokenSource.Cancel();
     }
 
+    void SetPuzzleNumber(GameObject go, int i)
+    {
+        PuzzlePiece pp = go.GetComponent<PuzzlePiece>();
+
+        if (!pp)
+            pp.PuzzleNumber = i + 1;
+    }
+
+    void GeneratePuzzlesPieces()
+    {
+        if (puzzlesGOPrefab == null)
+            return;
+        else
+            Debug.LogWarning("Falta GO en Lista PuzzleGoPrefab");
+
+        puzzlePieces = new List<GameObject>();
+
+        for (int i = 0; i < puzzlePiecesAmount; i++)
+        {
+            GameObject obj = (GameObject)Instantiate(puzzlesGOPrefab[i]);
+            puzzlePieces.Add(obj);
+            obj.transform.SetParent(this.transform);
+
+            SetPuzzleNumber(obj, i);
+
+            obj.SetActive(false);
+        }
+    }
+
     async void SecuencialPuzzles()
     {
 
-        for (int i = 0; i < puzzlesGO.Count; i++)
+        for (int i = 0; i < puzzlePieces.Count; i++)
         {
             if (tokenSource.IsCancellationRequested) return;
-            await ActivatePuzzle(puzzlesGO[i], invokeTimes[i]);
+            await ActivatePuzzle(puzzlePieces[i], invokeTimes[i]);
             Debug.Log("Hola " + i);
         }
     }
@@ -111,9 +142,9 @@ public class PuzzlesGenerator : MonoBehaviour
 
     private bool CheckPuzzleDistance(Vector3 newPos)
     {
-        for (int i = 0; i < puzzlesGO.Count; i++)
+        for (int i = 0; i < puzzlesGOPrefab.Count; i++)
         {
-            if (Vector3.Distance(newPos, puzzlesGO[i].transform.position) < minDistPuzzle)
+            if (Vector3.Distance(newPos, puzzlesGOPrefab[i].transform.position) < minDistPuzzle)
             {
                 return false;
             }

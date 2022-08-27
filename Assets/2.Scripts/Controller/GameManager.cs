@@ -6,12 +6,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject pivotPointGo;
 
     private PuzzleAltar puzzleAltar;
+    private AudioIA audioIA;
 
     private bool isVictoryStarted;
 
     private void Awake()
     {
         puzzleAltar = FindObjectOfType<PuzzleAltar>();
+        audioIA = FindObjectOfType<AudioIA>();
     }
     private void Update()
     {
@@ -23,6 +25,21 @@ public class GameManager : MonoBehaviour
         {
             isVictoryStarted = true;
             OpenVictoryDoor();
+        }
+    }
+
+    public void ChangeGamePhase(int i) //Utilizado cuando se ejecuta el metodo AddPuzzle en PlayerInventory
+    {
+        switch (i)
+        {
+            case 3:
+                GameEnvironment.Singleton.PhaseNumber = 2;
+                audioIA.PlayBossGrowlPhase(GameEnvironment.Singleton.PhaseNumber);
+                break;
+            case 6:
+                GameEnvironment.Singleton.PhaseNumber = 3;
+                audioIA.PlayBossGrowlPhase(GameEnvironment.Singleton.PhaseNumber);
+                break;
         }
     }
 
