@@ -81,6 +81,9 @@ public class PlayerInteraction : MonoBehaviour
 
     bool CompareObject(GameObject go, string tag)
     {
+        if (go == null)
+            return false;
+
         if (go.CompareTag(tag))
         {
             return true;
