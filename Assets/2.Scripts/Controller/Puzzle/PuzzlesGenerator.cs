@@ -81,12 +81,10 @@ public class PuzzlesGenerator : MonoBehaviour
 
     async void SecuencialPuzzles()
     {
-
         for (int i = 0; i < puzzlePieces.Count; i++)
         {
             if (tokenSource.IsCancellationRequested) return;
             await ActivatePuzzle(puzzlePieces[i], invokeTimes[i]);
-            Debug.Log("Hola " + i);
         }
     }
 

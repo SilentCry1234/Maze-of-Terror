@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 /// <summary>
@@ -17,6 +18,8 @@ public class PlayerInteraction : MonoBehaviour
 
     private KeyCode interactionKey;
 
+    private bool isCoroutineStarted;
+
     private void Awake()
     {
         playerInventory = FindObjectOfType<PlayerInventory>();
@@ -28,6 +31,7 @@ public class PlayerInteraction : MonoBehaviour
     private void Update()
     {
         Interact(Input.GetKeyDown(interactionKey));
+        CheckLights();
     }
     void Interact(bool input) //Puede implementarse con PuzzleInteraction
     {
@@ -35,7 +39,6 @@ public class PlayerInteraction : MonoBehaviour
         {
             RunMethod(() => PickUpPuzzlePiece(), "PPuzzle");
             RunMethod(() => OpenAltarUI(), "Altar");
-            //CastRay();
         }
     }
     //void CastRay()
@@ -68,6 +71,8 @@ public class PlayerInteraction : MonoBehaviour
     }
 
 
+
+
     GameObject CastRay()
     {
         RaycastHit rayCastInfo;
@@ -96,6 +101,9 @@ public class PlayerInteraction : MonoBehaviour
     void PickUpPuzzlePiece()
     {
         GameObject go = CastRay();
+
+        if (go == null) return;
+
         go.SetActive(false);
 
         playerInventory.AddPuzzle(go);
@@ -108,5 +116,61 @@ public class PlayerInteraction : MonoBehaviour
             puzzleAltar.ActivatePuzzleUI();
             StartCoroutine(puzzleAltar.SetPuzzlePiece());
         }
+    }
+
+    void CheckLights()
+    {
+        SwitchLight("PPuzzle");
+        SwitchLight("Battery");
+    }
+
+    void SwitchLight(string tag)
+    {
+        GameObject go = CastRay();
+        if (CompareObject(go, tag))
+        {
+            EnableLight();
+            StartCoroutine(DisableLight(go, tag));
+        }
+    }
+
+    void EnableLight()
+    {
+        GameObject go = CastRay();
+
+        if (go == null) return;
+
+        Light Out = go.GetComponent<Light>();
+
+        if (Out == null) return;
+
+        Out.enabled = true;
+    }
+
+    IEnumerator DisableLight(GameObject go, string tag)
+    {
+        if (!isCoroutineStarted)
+        {
+            isCoroutineStarted = true;
+            while (CompareObject(go, tag))
+            {
+                yield return new WaitForSeconds(0.1f);
+                if (!CompareObject(CastRay(), tag))
+                {
+                    DisableLight(go);
+                    isCoroutineStarted = false;
+                }
+            }
+        }
+    }
+    void DisableLight(GameObject go)
+    {
+        if (go == null) return;
+
+        Light Out = go.GetComponent<Light>();
+
+        if (Out == null) return;
+
+        Out.enabled = false;
     }
 }
