@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.0005040242, g: 0.000604134, b: 0.30401957, a: 1}
+  m_IndirectSpecularColor: {r: 0.0005469669, g: 0.0006048998, b: 0.30403817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7005,7 +7005,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &705507994
 Light:
   m_ObjectHideFlags: 0
@@ -22574,18 +22574,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 535462994, guid: 580cbf51a6f9ab8469961438983feda6, type: 3}
-      propertyPath: openAC
-      value: 
-      objectReference: {fileID: 8300000, guid: 962f56b00eb07c441bf660d64f385565, type: 3}
-    - target: {fileID: 535462994, guid: 580cbf51a6f9ab8469961438983feda6, type: 3}
-      propertyPath: closeAC
-      value: 
-      objectReference: {fileID: 8300000, guid: 9fa1e9f370aed0f4faa0b0e8d5afc68c, type: 3}
-    - target: {fileID: 535462994, guid: 580cbf51a6f9ab8469961438983feda6, type: 3}
-      propertyPath: altarUIAS
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2163761699349049296, guid: 580cbf51a6f9ab8469961438983feda6, type: 3}
       propertyPath: gameOver
       value: 
@@ -22597,10 +22585,6 @@ PrefabInstance:
     - target: {fileID: 2163761699862577401, guid: 580cbf51a6f9ab8469961438983feda6, type: 3}
       propertyPath: m_Name
       value: Player (Terror)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2163761699862577401, guid: 580cbf51a6f9ab8469961438983feda6, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2163761699862577402, guid: 580cbf51a6f9ab8469961438983feda6, type: 3}
       propertyPath: staminaText
