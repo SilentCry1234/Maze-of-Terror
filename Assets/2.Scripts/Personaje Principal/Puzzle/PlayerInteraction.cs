@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using OutlineSpace;
 
 /// <summary>
 /// Se encarga de interactuar con los GO tirando rayos desde la camara
@@ -31,7 +32,7 @@ public class PlayerInteraction : MonoBehaviour
     private void Update()
     {
         Interact(Input.GetKeyDown(interactionKey));
-        CheckLights();
+        CheckEffects();
     }
     void Interact(bool input) //Puede implementarse con PuzzleInteraction
     {
@@ -117,20 +118,21 @@ public class PlayerInteraction : MonoBehaviour
             StartCoroutine(puzzleAltar.SetPuzzlePiece());
         }
     }
-
-    void CheckLights()
+    #region Lights
+    void CheckEffects()
     {
-        SwitchLight("PPuzzle");
-        SwitchLight("Battery");
+        SwitchEffects("PPuzzle");
+        SwitchEffects("Battery");
     }
 
-    void SwitchLight(string tag)
+    void SwitchEffects(string tag)
     {
         GameObject go = CastRay();
         if (CompareObject(go, tag))
         {
             EnableLight();
-            StartCoroutine(DisableLight(go, tag));
+            EnableOutline();
+            StartCoroutine(Disable(go, tag, (go) => DisableLight(go), (go) => DisableOutline(go)));
         }
     }
 
@@ -147,7 +149,7 @@ public class PlayerInteraction : MonoBehaviour
         Out.enabled = true;
     }
 
-    IEnumerator DisableLight(GameObject go, string tag)
+    IEnumerator Disable(GameObject go, string tag, Action<GameObject> ac, Action<GameObject> ac2)
     {
         if (!isCoroutineStarted)
         {
@@ -157,7 +159,9 @@ public class PlayerInteraction : MonoBehaviour
                 yield return new WaitForSeconds(0.1f);
                 if (!CompareObject(CastRay(), tag))
                 {
-                    DisableLight(go);
+                    ac(go);
+                    ac2(go);
+                    //DisableLight(go);
                     isCoroutineStarted = false;
                 }
             }
@@ -173,4 +177,46 @@ public class PlayerInteraction : MonoBehaviour
 
         Out.enabled = false;
     }
+    #endregion
+
+    #region Outline
+
+    void EnableOutline()
+    {
+        GameObject go = CastRay();
+
+        if (go == null) return;
+
+        Outline outL = go.GetComponent<Outline>();
+        OutlineAnimation outA = go.GetComponent<OutlineAnimation>();
+
+        if (outA == null) return;
+
+        outA.enabled = true;
+
+        if (outL == null) return;
+
+        outL.enabled = true;
+
+
+
+    }
+
+    void DisableOutline(GameObject go)
+    {
+        if (go == null) return;
+
+        Outline Out = go.GetComponent<Outline>();
+        OutlineAnimation outA = go.GetComponent<OutlineAnimation>();
+
+        if (Out == null) return;
+
+        Out.enabled = false;
+
+        if (outA == null) return;
+
+        outA.enabled = false;
+    }
+
+    #endregion
 }

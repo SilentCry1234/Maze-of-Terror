@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 7865880354705589811}
   - component: {fileID: 7865880354705589814}
   - component: {fileID: -8262283878511902605}
+  - component: {fileID: -4736998211937432059}
+  - component: {fileID: 897142823861894491}
   m_Layer: 0
   m_Name: PPuzzle1
   m_TagString: PPuzzle
@@ -174,3 +176,30 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &-4736998211937432059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7865880354705589821}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf3575480402db40813e763382412fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 0
+  eraseRenderer: 0
+--- !u!114 &897142823861894491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7865880354705589821}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76545e335b04fad458171f63496ec38d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialColor: {r: 0.74509805, g: 0.2784314, b: 0.2784314, a: 0}

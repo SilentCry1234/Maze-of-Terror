@@ -48,7 +48,8 @@ public class Player_Controller : MonoBehaviour
     void Awake()
     {
         player = GetComponent<CharacterController>();
-        cam = FindObjectOfType<Camera>();
+        //cam = FindObjectOfType<Camera>();
+        cam = Camera.main;
 
         staminaMAX = stamina; 
     }

@@ -107,6 +107,8 @@ GameObject:
   - component: {fileID: 1881711824942797582}
   - component: {fileID: 5688265851690219766}
   - component: {fileID: 5955058242271546747}
+  - component: {fileID: 5516663237319394199}
+  - component: {fileID: 561998166610946}
   m_Layer: 0
   m_Name: Battery
   m_TagString: Battery
@@ -256,3 +258,29 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &5516663237319394199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5807548463881336698}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf3575480402db40813e763382412fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 0
+  eraseRenderer: 0
+--- !u!114 &561998166610946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5807548463881336698}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76545e335b04fad458171f63496ec38d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
