@@ -27,6 +27,7 @@ public class PursueMinion : StateMinion
             }
             else if (!CanSeePlayer()) //Si no vemos al jugador, volver a patrullar
             {
+                Debug.Log("Termina perseguir");
                 nextState = new PatrolMinion(npc, agent, anim, player, boss);
                 stage = EVENT.EXIT;
             }

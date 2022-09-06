@@ -110,6 +110,7 @@ public class StateMinion
             {
                 if (rayCastInfo.transform.gameObject.tag == "Player") //Si es el jugador
                 {
+                    Debug.Log("Inicia perseguir " + timeToChase);
                     Debug.DrawRay(npc.transform.position, direction, Color.green);
                     playerSeen = true;
                     timeToChase = 7.0f;

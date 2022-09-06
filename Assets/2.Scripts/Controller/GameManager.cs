@@ -61,8 +61,12 @@ public class GameManager : MonoBehaviour
 
     void CheckPlayerVictory(Vector3 playerPos, Vector3 victoryPos)
     {
+        if (!isVictoryStarted) return;
+        if (playerPos == null) Debug.LogWarning("Lack playerGameObject");
+        if (victoryPos == null) Debug.LogWarning("Lack VictoryGameObject");
         if (Vector3.Distance(playerPos, victoryPos) < victoryDistance)
         {
+            Debug.Log("Victoria");
             /* 1-Cartel de victoria
              * 2- Boton de ir al menu
              * */

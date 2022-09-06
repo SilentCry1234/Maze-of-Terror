@@ -61,9 +61,10 @@ public class PuzzlesGenerator : MonoBehaviour
     void GeneratePuzzlesPieces()
     {
         if (puzzlesGOPrefab == null)
-            return;
-        else
+        {
             Debug.LogWarning("Falta GO en Lista PuzzleGoPrefab");
+            return;
+        }
 
         puzzlePieces = new List<GameObject>();
 
