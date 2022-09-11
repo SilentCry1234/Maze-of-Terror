@@ -33,6 +33,8 @@ public class PatrolBoss : StateBoss
                 lastDis = distance;
             }
         }
+        if (AudioIA.Instance != null)
+            AudioIA.Instance.PlayBossBreath();
         anim.SetBool("isPatrolling", true); //Pone un "Evento" en el sistema que -no se usa hasta que la anim corra, si la anim no corre o 
         base.Enter();               // no necesita ser activada, el evento sigue ahi y puede causar problemas de transicion al iniciar otro trigger
     }

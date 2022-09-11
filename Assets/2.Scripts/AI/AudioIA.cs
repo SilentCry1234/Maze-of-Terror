@@ -6,6 +6,7 @@ public class AudioIA : MonoBehaviour
     [SerializeField] AudioSource bossAttackAS;
     [SerializeField] AudioSource bossGrowlAS;
     [SerializeField] AudioSource bossSurpriseAS;
+    [SerializeField] AudioSource bossBreathAS;
     [Space]
     [SerializeField] AudioClip bossAttackAC;
     [SerializeField] AudioClip bossSurpriseAC;
@@ -35,6 +36,11 @@ public class AudioIA : MonoBehaviour
             Debug.Log("singletonDestruir");
             Destroy(gameObject);
         }
+    }
+
+    public void PlayBossBreath()
+    {
+        bossBreathAS.Play();
     }
 
     #region Attacks
