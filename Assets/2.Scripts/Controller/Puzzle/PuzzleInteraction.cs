@@ -11,7 +11,9 @@ public class PuzzleInteraction : MonoBehaviour, IPointerEnterHandler, IPointerEx
     [Space]
     [SerializeField] int puzzleNumber;
 
-
+    [SerializeField] AudioSource UIAS;
+    [SerializeField] AudioClip clickAC;
+    [SerializeField] AudioClip correctAC;
 
 
     private bool mouseOverUI;
@@ -27,14 +29,19 @@ public class PuzzleInteraction : MonoBehaviour, IPointerEnterHandler, IPointerEx
     private void RotateLeft()
     {
         objectToRotate.transform.Rotate(Vector3.forward, 90.0f);
+        PlayInteractionSound(1.25f);
     }
     private void RotateRight()
     {
         objectToRotate.transform.Rotate(Vector3.forward, -90.0f);
+        PlayInteractionSound(1f);
+
     }
 
     void CheckSpritePos()
     {
+        if (correctPuzzlePos) return;
+
         switch (objectToRotate.transform.rotation.eulerAngles.z)
         {
             case >= 270: //Equivalente a -90
@@ -48,6 +55,7 @@ public class PuzzleInteraction : MonoBehaviour, IPointerEnterHandler, IPointerEx
                 break;
             case >= 0:
                 correctPuzzlePos = true;
+                PlayCorrectSound();
                 break;
 
             default:
@@ -103,5 +111,21 @@ public class PuzzleInteraction : MonoBehaviour, IPointerEnterHandler, IPointerEx
     public void OnPointerExit(PointerEventData eventData)
     {
         mouseOverUI = false;
+    }
+    void PlayCorrectSound()
+    {
+        if (UIAS == null) { Debug.LogWarning("Falta AudioSource UIAS en PuzzleInteraction"); return; }
+        if (correctAC == null) { Debug.LogWarning("Falta AudioClip correctAC en PuzzleInteraction"); return; }
+
+        UIAS.PlayOneShot(correctAC);
+    }
+
+    void PlayInteractionSound(float pitch)
+    {
+        if (UIAS == null) { Debug.LogWarning("Falta AudioSource UIAS en PuzzleInteraction"); return; }
+        if (clickAC == null) { Debug.LogWarning("Falta AudioClip clickAC en PuzzleInteraction"); return; }
+
+        UIAS.pitch = pitch;
+        UIAS.PlayOneShot(clickAC);
     }
 }

@@ -1,16 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager instance; 
+    
     public AudioMixer masterEffects, masterMusic;
     [Space]
     public AudioSource backgroundMusic, player_Hit, playerDeath;
-
-    public static AudioManager instance; 
+    [Space]
+    [Header("AudioClips del jugador")]
+    public AudioClip playerPickAC;
 
     [Range(-20f, 20f)]
     public float masterVol, effectsVol;
@@ -62,5 +63,15 @@ public class AudioManager : MonoBehaviour
     public void PlayAudio(AudioSource audio)
     {
         audio.Play();
+    }
+
+    public void PlayOneShoot(AudioSource aS, AudioClip aC, float vol)
+    {
+        aS.PlayOneShot(aC, vol);
+    }
+
+    public void ChangeASPitch(AudioSource aS, float newPitch)
+    {
+        aS.pitch = newPitch;
     }
 }

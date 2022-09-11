@@ -23,12 +23,10 @@ public class Flashlight : MonoBehaviour
     public Transform player;
 
     private KeyCode inputFlashlight;
-    private KeyCode inputInteraction;
 
     private void Awake()
     {
         inputFlashlight = KeyCode.F;
-        inputInteraction = KeyCode.E;
     }
     void Update()
     {
@@ -36,7 +34,6 @@ public class Flashlight : MonoBehaviour
         //Para poder expandir el codigo, pido el input por parametro, asi no queda atado al teclado o dispositivo
         BatteryStatus(Input.GetKeyDown(inputFlashlight));
         BatteryDown();
-        ChargeBattery(Input.GetKeyDown(inputInteraction));
     }
 
     void BatteryStatus(bool input)
@@ -67,23 +64,9 @@ public class Flashlight : MonoBehaviour
             battery = 0.01f;
         }
     }
-
-    void ChargeBattery(bool input)
+    public void ChargeBattery() //Utilizado en PlayerInteraction
     {
-        if (input)
-        {
-            RaycastHit hit;
-            if (Physics.Raycast(player.position, player.forward, out hit, 6.5f))
-            {
-                if (hit.collider.gameObject.CompareTag("Battery")) //Se puede intercambias las etiquetas por un script
-                {
-                    battery += 12.5f; 
-
-
-                    Destroy(hit.collider.gameObject);
-                }
-            }
-        }
+        battery += 12.5f;
     }
 
     //Agregar una corrutina para disparar la linterna. Para no depender del Time.deltatime. 
