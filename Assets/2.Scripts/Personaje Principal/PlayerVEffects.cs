@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class PlayerVEffects : MonoBehaviour
 {
+    [Header("Animator de PanelPickup")]
+    [SerializeField] Animator pickUpAnim;
+
+
     private PlayerInteraction playerInteraction;
 
     private bool isCoroutineStarted;
@@ -21,21 +25,52 @@ public class PlayerVEffects : MonoBehaviour
     {
         SwitchEffects("PPuzzle");
         SwitchEffects("Battery");
+        SwitchEffects("Altar");
     }
+
 
     void SwitchEffects(string tag)
     {
         if (playerInteraction == null)
+        {
             Debug.LogWarning("Falta asignar PlayerInteraction script");
+            return;
+        }
 
         GameObject go = playerInteraction.CastRay();
         if (playerInteraction.CompareObject(go, tag))
         {
             EnableLight();
             EnableOutline();
+            EnableUI();
             StartCoroutine(Disable(go, tag, (go) => DisableLight(go), (go) => DisableOutline(go)));
         }
     }
+
+    #region UI
+    void EnableUI()
+    {
+        if (pickUpAnim == null)
+        {
+            Debug.LogWarning("Falta Asignar animator PickUpAnim en PlayerVEffects");
+            return;
+        }
+
+        pickUpAnim.SetBool("disappear", false);
+        pickUpAnim.SetBool("appear", true);
+    }
+
+    void DisableUI()
+    {
+        if (pickUpAnim == null)
+        {
+            Debug.LogWarning("Falta Asignar animator PickUpAnim en PlayerVEffects");
+            return;
+        }
+        pickUpAnim.SetBool("appear", false);
+        pickUpAnim.SetBool("disappear", true);
+    }
+    #endregion
     #region Lights
     void EnableLight()
     {
@@ -65,11 +100,36 @@ public class PlayerVEffects : MonoBehaviour
                 {
                     ac(go);
                     ac2(go);
+                    DisableUI();
+
+                    isCoroutineStarted = false;
+                    break;
+                }
+            }
+        }
+    }
+
+    IEnumerator Disable(GameObject go, string tag)
+    {
+        if (playerInteraction == null)
+            Debug.LogWarning("Falta asignar PlayerInteraction script");
+
+        if (!isCoroutineStarted)
+        {
+            isCoroutineStarted = true;
+            while (playerInteraction.CompareObject(go, tag))
+            {
+                yield return new WaitForSeconds(0.1f);
+                if (!playerInteraction.CompareObject(playerInteraction.CastRay(), tag))
+                {
+                    DisableUI();
+
                     isCoroutineStarted = false;
                 }
             }
         }
     }
+
     void DisableLight(GameObject go)
     {
         if (go == null) return;
@@ -80,7 +140,7 @@ public class PlayerVEffects : MonoBehaviour
 
         Out.enabled = false;
     }
-#endregion
+    #endregion
 
     #region Outline
 
