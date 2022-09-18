@@ -14,6 +14,7 @@ public class PlayerInteraction : MonoBehaviour
     [Header("Transform del GO que controla la mira")]
     [SerializeField] Transform cameraTransf;
 
+    private GameManager gameManager;
     private PlayerInventory playerInventory;
     private PuzzleAltar puzzleAltar;
     private AudioManager audioManager;
@@ -23,6 +24,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Awake()
     {
+        gameManager = FindObjectOfType<GameManager>();
         playerInventory = FindObjectOfType<PlayerInventory>();
         audioManager = FindObjectOfType<AudioManager>();
         puzzleAltar = FindObjectOfType<PuzzleAltar>();
@@ -41,7 +43,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             RunMethod(() => PickUpPuzzlePiece(), "PPuzzle");
             RunMethod(() => PickUpBattery(), "Battery");
-            RunMethod(() => OpenAltarUI(), "Altar");
+            RunMethod(() => InteractAltar(), "Altar");
         }
     }
     void RunMethod(Action method, string tag)
@@ -85,6 +87,29 @@ public class PlayerInteraction : MonoBehaviour
 
         playerInventory.AddPuzzle(go);
         PlayPickUpSound();
+    }
+
+    void InteractAltar()
+    {
+        if (gameManager == null)
+        {
+            Debug.LogWarning("Lack GameManager Script in Scene");
+            return;
+        }
+        if(puzzleAltar == null)
+        {
+            Debug.LogWarning("Lack PuzzleAltar Script in Scene");
+            return;
+        }
+
+        if(puzzleAltar.IsFirstInteraction)
+        {
+            puzzleAltar.IsFirstInteraction = false;
+            gameManager.IsGameStarted = true;
+            puzzleAltar.PlayScreamSound();
+            return;
+        }
+        OpenAltarUI();
     }
 
     void OpenAltarUI()

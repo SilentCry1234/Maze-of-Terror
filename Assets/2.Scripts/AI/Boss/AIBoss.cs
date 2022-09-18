@@ -7,6 +7,7 @@ public class AIBoss : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField] BoxCollider barrierCol;
 
+    private GameManager gameManager;
     private NavMeshAgent agent;
     private Animator anim;
     private StateBoss currentState;
@@ -14,6 +15,7 @@ public class AIBoss : MonoBehaviour
 
     private void Awake()
     {
+        gameManager = FindObjectOfType<GameManager>();
         agent = this.GetComponent<NavMeshAgent>();
         anim = this.GetComponent<Animator>();
     }
@@ -24,6 +26,7 @@ public class AIBoss : MonoBehaviour
 
     private void Update() //Crear cond. de Si el juego esta iniciado....
     {
-        currentState = currentState.Process(); //Este metodo se encarga de pasar de un estado a otro
+        if (gameManager.IsGameStarted)
+            currentState = currentState.Process(); //Este metodo se encarga de pasar de un estado a otro
     }
 }

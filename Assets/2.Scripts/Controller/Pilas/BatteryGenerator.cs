@@ -24,12 +24,23 @@ public class BatteryGenerator : MonoBehaviour
     [SerializeField] float minDistance;
 
 
+    private GameManager gameManager;
+
+    private bool wereBatteriesGenerated;
+
+    private void Awake()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
 
     private void Start()
     {
+        //GenerateBatteries();
+    }
+    private void Update()
+    {
         GenerateBatteries();
     }
-
     private Vector3 GenerateRandomPos()
     {
         float xValue = Random.Range(minMapValueX, maxMapValueX);
@@ -87,52 +98,63 @@ public class BatteryGenerator : MonoBehaviour
     }
     private void GenerateBatteries()
     {
-        bateriesGO = new List<GameObject>();
-        for (int i = 0; i < numberBatteries; i++)
+        if (gameManager == null)
         {
-            int numberCycles = 0;
+            Debug.LogWarning("Lack GameManager script in scene");
+            return;
+        }
+        if (!gameManager.IsGameStarted) return;
 
-            GameObject obj = (GameObject)Instantiate(bateryPrefab);
-            bool optimalPosition = false;
-
-            if (bateriesGO.Count > 0)
+        if (!wereBatteriesGenerated)
+        {
+            wereBatteriesGenerated = true;
+            bateriesGO = new List<GameObject>();
+            for (int i = 0; i < numberBatteries; i++)
             {
-                while (!optimalPosition) //si no tiene posicion optima, genera una nueva
+                int numberCycles = 0;
+
+                GameObject obj = (GameObject)Instantiate(bateryPrefab);
+                bool optimalPosition = false;
+
+                if (bateriesGO.Count > 0)
                 {
-                    Vector3 newPos = GeneratePosInNavMesh();
-                    int batteriesOk = 0;
-
-                    for (int b = 0; b < bateriesGO.Count; b++)
+                    while (!optimalPosition) //si no tiene posicion optima, genera una nueva
                     {
-                        if (!CheckMinDistance(newPos, bateriesGO[b].transform.position))
+                        Vector3 newPos = GeneratePosInNavMesh();
+                        int batteriesOk = 0;
+
+                        for (int b = 0; b < bateriesGO.Count; b++)
                         {
-                            break;
+                            if (!CheckMinDistance(newPos, bateriesGO[b].transform.position))
+                            {
+                                break;
+                            }
+                            else
+                                batteriesOk++;
                         }
-                        else
-                            batteriesOk++;
-                    }
-                    if (batteriesOk == bateriesGO.Count)
-                    {
-                        optimalPosition = true;
-                        obj.transform.position = newPos;
-                    }
+                        if (batteriesOk == bateriesGO.Count)
+                        {
+                            optimalPosition = true;
+                            obj.transform.position = newPos;
+                        }
 
-                    numberCycles++;
-                    if (numberCycles >= 500) //Si hay mucha distancia entre baterias y no hay espacio disponible, va a ejecutar WHILE infinitamente
-                    {
-                        Debug.LogWarning("BatteryGenerator: Posicion no valida, disminuir distancia");
-                        break; //Rompe el bucle While 
+                        numberCycles++;
+                        if (numberCycles >= 500) //Si hay mucha distancia entre baterias y no hay espacio disponible, va a ejecutar WHILE infinitamente
+                        {
+                            Debug.LogWarning("BatteryGenerator: Posicion no valida, disminuir distancia");
+                            break; //Rompe el bucle While 
+                        }
                     }
                 }
+                else
+                    obj.transform.position = GeneratePosInNavMesh();
+
+                bateriesGO.Add(obj);
+
+
+                obj.transform.SetParent(this.transform);
             }
-            else
-                obj.transform.position = GeneratePosInNavMesh();
-
-            bateriesGO.Add(obj);
-
-
-            obj.transform.SetParent(this.transform);
         }
-    }
 
+    }
 }

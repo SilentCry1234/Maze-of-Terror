@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour
     private AudioIA audioIA;
 
     private bool isVictoryStarted;
+    private bool isGameStarted;
+
+    public bool IsGameStarted { get => isGameStarted; set => isGameStarted = value; }
 
     private void Awake()
     {

@@ -23,20 +23,23 @@ public class PuzzleAltar : MonoBehaviour
     [Space]
     [SerializeField] AudioClip openAC;
     [SerializeField] AudioClip closeAC;
+    [Space]
+    [SerializeField] List<AudioClip> screamAClips;
 
     private PlayerInventory playerInventory;
 
 
     private bool puzzleCompleted;
     private bool puzzleUIOpened;
+    private bool isFirstInteraction;
     public bool PuzzleUIOpened { get => puzzleUIOpened; }
     public bool PuzzleCompleted { get => puzzleCompleted; }
+    public bool IsFirstInteraction { get => isFirstInteraction; set => isFirstInteraction = value; }
 
     private void Awake()
     {
         playerInventory = FindObjectOfType<PlayerInventory>();
-
-        //Hacer FindObjectOfType para buscar al player y al altar 
+        isFirstInteraction = true;
     }
 
     private void Update()
@@ -51,6 +54,22 @@ public class PuzzleAltar : MonoBehaviour
         puzzleUIAnim.SetBool("Expand", true);
 
         altarUIAS.PlayOneShot(openAC, 1.5f);
+    }
+
+    public void PlayScreamSound()
+    {
+        if (altarUIAS == null)
+        {
+            Debug.LogWarning("Lack altarUIAS audioSource in PuzzleAltar script");
+            return;
+        }
+        if (screamAClips == null)
+        {
+            Debug.LogWarning("LackaudioClips in screamAClips in PuzzleAltar script");
+            return;
+        }
+        int scream = Random.Range(0, screamAClips.Count);
+        altarUIAS.PlayOneShot(screamAClips[scream]);
     }
 
     public IEnumerator SetPuzzlePiece()

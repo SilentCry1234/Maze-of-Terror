@@ -33,16 +33,26 @@ public class PuzzlesGenerator : MonoBehaviour
 
     [SerializeField] List<int> invokeTimes; //Tiempos a esperar entre la invocacion de pieza y pieza
 
+    private GameManager gameManager;
     private CancellationTokenSource tokenSource; //Necesario para cancelar Task
     private List<GameObject> puzzlePieces;
+
+    private bool isPuzzlesGenerated;
     private void Awake()
     {
+        gameManager = FindObjectOfType<GameManager>();
+
         tokenSource = new CancellationTokenSource();
     }
 
     private void Start()
     {
         GeneratePuzzlesPieces();
+        //SecuencialPuzzles();
+    }
+
+    private void Update()
+    {
         SecuencialPuzzles();
     }
     private void OnDisable()
@@ -82,10 +92,21 @@ public class PuzzlesGenerator : MonoBehaviour
 
     async void SecuencialPuzzles()
     {
-        for (int i = 0; i < puzzlePieces.Count; i++)
+        if(gameManager == null)
         {
-            if (tokenSource.IsCancellationRequested) return;
-            await ActivatePuzzle(puzzlePieces[i], invokeTimes[i]);
+            Debug.LogWarning("Lack GameManager script in scene");
+            return;
+        }
+        if (!gameManager.IsGameStarted) return;
+
+        if (!isPuzzlesGenerated)
+        {
+            isPuzzlesGenerated = true;
+            for (int i = 0; i < puzzlePieces.Count; i++)
+            {
+                if (tokenSource.IsCancellationRequested) return;
+                await ActivatePuzzle(puzzlePieces[i], invokeTimes[i]);
+            }
         }
     }
 
