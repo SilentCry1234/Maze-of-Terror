@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     [Space]
     [Header("Victoria")]
     [SerializeField] GameObject victoryPointGo;
+    [SerializeField] GameObject victoryImage; 
     [SerializeField] float victoryDistance;
     [Space]
     [Header("Player")]
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
     {
         puzzleAltar = FindObjectOfType<PuzzleAltar>();
         audioIA = FindObjectOfType<AudioIA>();
+        victoryImage.SetActive(false);
     }
     private void Update()
     {
@@ -73,6 +75,8 @@ public class GameManager : MonoBehaviour
             /* 1-Cartel de victoria
              * 2- Boton de ir al menu
              * */
+            Time.timeScale = 0;
+            victoryImage.SetActive(true);
         }
     }
 }

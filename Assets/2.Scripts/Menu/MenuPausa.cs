@@ -8,6 +8,7 @@ public class MenuPausa : MonoBehaviour
     public GameObject pausa;
     bool isPaused;
 
+
     private void Awake()
     {
         Time.timeScale = 1;
@@ -38,6 +39,6 @@ public class MenuPausa : MonoBehaviour
 
     public void RegresarMenu()
     {
-        SceneManager.LoadScene(0); 
+        SceneManager.LoadScene("Menu Principal"); 
     }
 }
