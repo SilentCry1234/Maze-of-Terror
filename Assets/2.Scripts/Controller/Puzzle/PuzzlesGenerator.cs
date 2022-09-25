@@ -48,7 +48,6 @@ public class PuzzlesGenerator : MonoBehaviour
     private void Start()
     {
         GeneratePuzzlesPieces();
-        //SecuencialPuzzles();
     }
 
     private void Update()
