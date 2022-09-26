@@ -140,6 +140,9 @@ MonoBehaviour:
   objectToRotate: {fileID: 6273227848627888117}
   puzzleAnim: {fileID: 6273227847431408203}
   puzzleNumber: 6
+  UIAS: {fileID: 0}
+  clickAC: {fileID: 8300000, guid: 5c34127caefb013478049d33a4b16aed, type: 3}
+  correctAC: {fileID: 8300000, guid: afa63dd2c3ad04849be60aa96610b3cf, type: 3}
 --- !u!95 &6273227847431408203
 Animator:
   serializedVersion: 4
@@ -380,6 +383,9 @@ MonoBehaviour:
   objectToRotate: {fileID: 6273227849081878349}
   puzzleAnim: {fileID: 6273227847627855884}
   puzzleNumber: 5
+  UIAS: {fileID: 0}
+  clickAC: {fileID: 8300000, guid: 5c34127caefb013478049d33a4b16aed, type: 3}
+  correctAC: {fileID: 8300000, guid: afa63dd2c3ad04849be60aa96610b3cf, type: 3}
 --- !u!95 &6273227847627855884
 Animator:
   serializedVersion: 4
@@ -540,6 +546,9 @@ MonoBehaviour:
   objectToRotate: {fileID: 6273227849169474277}
   puzzleAnim: {fileID: 6273227847640911047}
   puzzleNumber: 4
+  UIAS: {fileID: 0}
+  clickAC: {fileID: 8300000, guid: 5c34127caefb013478049d33a4b16aed, type: 3}
+  correctAC: {fileID: 8300000, guid: afa63dd2c3ad04849be60aa96610b3cf, type: 3}
 --- !u!95 &6273227847640911047
 Animator:
   serializedVersion: 4
@@ -665,14 +674,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6273227847691374898}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6273227849328471205}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -741,14 +750,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6273227847900919248}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6273227848025422650}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -932,6 +941,9 @@ MonoBehaviour:
   objectToRotate: {fileID: 6273227847900919248}
   puzzleAnim: {fileID: 6273227848025422533}
   puzzleNumber: 1
+  UIAS: {fileID: 0}
+  clickAC: {fileID: 8300000, guid: 5c34127caefb013478049d33a4b16aed, type: 3}
+  correctAC: {fileID: 8300000, guid: afa63dd2c3ad04849be60aa96610b3cf, type: 3}
 --- !u!95 &6273227848025422533
 Animator:
   serializedVersion: 4
@@ -1092,6 +1104,9 @@ MonoBehaviour:
   objectToRotate: {fileID: 6273227848231690249}
   puzzleAnim: {fileID: 6273227848219525722}
   puzzleNumber: 2
+  UIAS: {fileID: 0}
+  clickAC: {fileID: 8300000, guid: 5c34127caefb013478049d33a4b16aed, type: 3}
+  correctAC: {fileID: 8300000, guid: afa63dd2c3ad04849be60aa96610b3cf, type: 3}
 --- !u!95 &6273227848219525722
 Animator:
   serializedVersion: 4
@@ -1137,14 +1152,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6273227848231690249}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6273227848219525723}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1492,14 +1507,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6273227848627888117}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6273227847431408204}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1733,7 +1748,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &6273227848720400100
 MonoBehaviour:
@@ -1880,14 +1895,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6273227849081878349}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6273227847627855885}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1956,14 +1971,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6273227849169474277}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6273227847640911160}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -2227,6 +2242,9 @@ MonoBehaviour:
   objectToRotate: {fileID: 6273227847691374898}
   puzzleAnim: {fileID: 6273227849328471204}
   puzzleNumber: 3
+  UIAS: {fileID: 0}
+  clickAC: {fileID: 8300000, guid: 5c34127caefb013478049d33a4b16aed, type: 3}
+  correctAC: {fileID: 8300000, guid: afa63dd2c3ad04849be60aa96610b3cf, type: 3}
 --- !u!95 &6273227849328471204
 Animator:
   serializedVersion: 4

@@ -28,51 +28,54 @@ using System.Collections.Generic;
 
 namespace OutlineSpace
 {
-	[RequireComponent(typeof(Renderer))]
-	/* [ExecuteInEditMode] */
-	public class Outline : MonoBehaviour
-	{
-		public Renderer Renderer { get; private set; }
-		public SpriteRenderer SpriteRenderer { get; private set; }
-		public SkinnedMeshRenderer SkinnedMeshRenderer { get; private set; }
-		public MeshFilter MeshFilter { get; private set; }
+    [RequireComponent(typeof(Renderer))]
+    /* [ExecuteInEditMode] */
+    public class Outline : MonoBehaviour
+    {
+        public Renderer Renderer { get; private set; }
+        public SpriteRenderer SpriteRenderer { get; private set; }
+        public SkinnedMeshRenderer SkinnedMeshRenderer { get; private set; }
+        public MeshFilter MeshFilter { get; private set; }
 
-		public int color;
-		public bool eraseRenderer;
+        public int color;
+        public bool eraseRenderer;
 
-		private void Awake()
-		{
-			Renderer = GetComponent<Renderer>();
-			SkinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();
-			SpriteRenderer = GetComponent<SpriteRenderer>();
-			MeshFilter = GetComponent<MeshFilter>();
-		}
+        private void Awake()
+        {
+            Renderer = GetComponent<Renderer>();
+            SkinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();
+            SpriteRenderer = GetComponent<SpriteRenderer>();
+            MeshFilter = GetComponent<MeshFilter>();
+        }
 
-		void OnEnable()
-		{
-			OutlineEffect.Instance?.AddOutline(this);
-		}
+        void OnEnable()
+        {
+            OutlineEffect.Instance?.AddOutline(this);
+        }
 
-		void OnDisable()
-		{
-			OutlineEffect.Instance?.RemoveOutline(this);
-		}
+        void OnDisable()
+        {
+            OutlineEffect.Instance?.RemoveOutline(this);
+        }
 
         private void Start()
         {
-			this.enabled = false;
+            this.enabled = false;
         }
 
         private Material[] _SharedMaterials;
-		public Material[] SharedMaterials
-		{
-			get
-			{
-				if (_SharedMaterials == null)
-					_SharedMaterials = Renderer.sharedMaterials;
+        public Material[] SharedMaterials
+        {
+            get
+            {
+                if (_SharedMaterials == null)
+                {
+                    if (Renderer != null)
+                        _SharedMaterials = Renderer.sharedMaterials;
+                }
 
-				return _SharedMaterials;
-			}
-		}
-	}
+                return _SharedMaterials;
+            }
+        }
+    }
 }

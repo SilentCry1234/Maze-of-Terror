@@ -220,6 +220,8 @@ namespace OutlineSpace
 
 				if (outline != null && l == (l | (1 << outline.gameObject.layer)))
 				{
+					if (outline.SharedMaterials == null) return; //Linea para evitar error en preRender
+
 					for (int v = 0; v < outline.SharedMaterials.Length; v++)
 					{
 						Material m = null;
