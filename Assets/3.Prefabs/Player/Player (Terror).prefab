@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1371066324}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.000000059604645, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -717,6 +717,7 @@ GameObject:
   - component: {fileID: 535462993}
   - component: {fileID: 535462994}
   - component: {fileID: 2163761699349049300}
+  - component: {fileID: 7564381862461514307}
   m_Layer: 7
   m_Name: Player (Terror)
   m_TagString: Player
@@ -733,7 +734,7 @@ Transform:
   m_GameObject: {fileID: 2163761699862577401}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 220.98, y: 2.52, z: -137}
-  m_LocalScale: {x: 1, y: 1.7, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2163761698960474809}
@@ -800,7 +801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0f98b3b3e997e24ba943a809e036aae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 500
+  health: 100
   healthText: {fileID: 0}
   gameOver: {fileID: 0}
   stunTime: 2
@@ -844,6 +845,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpAnim: {fileID: 0}
+--- !u!114 &7564381862461514307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2163761699862577401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54d3a00d7e77a5241b43837f2d4336d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2163761700237831080
 GameObject:
   m_ObjectHideFlags: 0
