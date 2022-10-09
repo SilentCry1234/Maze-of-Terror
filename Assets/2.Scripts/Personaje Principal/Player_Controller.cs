@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class Player_Controller : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class Player_Controller : MonoBehaviour
     [Space]
     [SerializeField] private float horizontalMove;
     [SerializeField] private float verticalMove;
+    [SerializeField] AudioSource playerWALK; 
+    [SerializeField] AudioSource playerRUN; 
     public float playerSpeed = 12f;
     public float runSpeed = 30f;
     [SerializeField] private float stamina = 10f, timeToRecover = 5f, staminaMAX;
@@ -64,16 +67,17 @@ public class Player_Controller : MonoBehaviour
 
     private void Moverse()
     {
+        
         horizontalMove = Input.GetAxis("Horizontal");
         verticalMove = Input.GetAxis("Vertical");
 
         playerInput = new Vector3(horizontalMove, 0 ,verticalMove);
         playerInput = Vector3.ClampMagnitude(playerInput, 1);
 
-        if(Input.GetKey(KeyCode.LeftShift) && stamina >= 0f)
+        if (Input.GetKey(KeyCode.LeftShift) && stamina >= 0f)
         {
             xyz = new Vector3(25, 0, 0);
-            Flashlight.localEulerAngles = Vector3.Lerp(Flashlight.localEulerAngles, xyz, Time.deltaTime * 2.5f);   
+            Flashlight.localEulerAngles = Vector3.Lerp(Flashlight.localEulerAngles, xyz, Time.deltaTime * 2.5f);
 
             playerInput = transform.TransformDirection(playerInput) * runSpeed;
 
@@ -89,13 +93,14 @@ public class Player_Controller : MonoBehaviour
             xyz = new Vector3(0, 0, 0);
             Flashlight.localEulerAngles = Vector3.Lerp(Flashlight.localEulerAngles, xyz, Time.deltaTime * 2.5f);
 
+            playerRUN.Play();
+
             playerInput = transform.TransformDirection(playerInput) * playerSpeed;
 
             if(stamina < staminaMAX)
             {
                 stamina += Time.deltaTime;
             }
-            
         }
 
         player.Move(playerInput * Time.deltaTime);
