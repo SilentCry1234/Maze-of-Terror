@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/1.Scenes/Segundo Laberinto.unity
     guid: ef81aefd5c3bb264eb2451c7ff997a31
   - enabled: 0
-    path: Assets/1.Scenes/Tercer Laberinto.unity
+    path: Assets/1.Scenes/Tercer Laberinto/Tercer Laberinto.unity
     guid: 40fd05a2a30ac4140bd6aa5c2606b476
   - enabled: 0
     path: Assets/1.Scenes/Cuarto Laberinto.unity
