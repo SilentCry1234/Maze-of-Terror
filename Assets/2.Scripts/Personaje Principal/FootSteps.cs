@@ -15,20 +15,20 @@ public class FootSteps : MonoBehaviour
 
     private void Update()
     {
-        Footsteps();
+        //Footsteps();
         //if (characterController.isGrounded == true && characterController.velocity.magnitude < 0.1f && playerWALK.isPlaying == true)
         //{
         //    StopFootsteps(); 
         //}
     }
 
-    private void Footsteps()
+    public void Footsteps()
     {
         if (characterController.isGrounded == true && playerWALK.isPlaying == false)
         {
             if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
             {
-                playerWALK.volume = Random.Range(0, 0.9f);
+                playerWALK.volume = Random.Range(0f, 1f);
                 playerWALK.pitch = Random.Range(0.8f, 1.1f);
                 playerWALK.Play();
             }

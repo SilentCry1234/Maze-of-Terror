@@ -19,6 +19,7 @@ public class Player_Controller : MonoBehaviour
     [SerializeField] private float stamina = 10f, timeToRecover = 5f, staminaMAX;
     public Text staminaText; 
     Vector3 playerInput;
+    FootSteps footSteps;
 
     [Header ("Gravedad")]
     [Space]
@@ -49,6 +50,7 @@ public class Player_Controller : MonoBehaviour
     void Awake()
     {
         player = GetComponent<CharacterController>();
+        footSteps = GetComponent<FootSteps>();
         //cam = FindObjectOfType<Camera>();
         cam = Camera.main;
 
@@ -60,6 +62,7 @@ public class Player_Controller : MonoBehaviour
         staminaText.text = "STAMINA: " + stamina.ToString("0"); 
         SetGravity();
         Moverse();
+        footSteps.Footsteps(); 
         Mirar();
     }
 
