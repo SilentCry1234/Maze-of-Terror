@@ -8,18 +8,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/1.Scenes/Escenas Importantes/Menu Principal.unity
     guid: c88b68f6b929abb4a810356445885e87
-  - enabled: 0
-    path: Assets/1.Scenes/Escenas Importantes/Tuto y Comic.unity
+  - enabled: 1
+    path: Assets/1.Scenes/Escenas Importantes/Comic.unity
     guid: 7c4b710097ff22c4caed4f547c89f61a
   - enabled: 1
     path: Assets/1.Scenes/Primer Laberinto/Primer Laberinto.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
-    path: Assets/1.Scenes/Segundo Laberinto.unity
-    guid: ef81aefd5c3bb264eb2451c7ff997a31
-  - enabled: 0
+  - enabled: 1
+    path: Assets/1.Scenes/Segundo Laberinto/Segundo Laberinto.unity
+    guid: d05e4a738ac37d841b3150215051724d
+  - enabled: 1
     path: Assets/1.Scenes/Tercer Laberinto/Tercer Laberinto.unity
     guid: 40fd05a2a30ac4140bd6aa5c2606b476
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/1.Scenes/Cuarto Laberinto.unity
     guid: c5375a11186fe724aa4ccabc6cd083e2

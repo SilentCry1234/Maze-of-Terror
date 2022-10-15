@@ -120,6 +120,8 @@ public class PuzzlesGenerator : MonoBehaviour
         }
         if (tokenSource.IsCancellationRequested) return;
         GO.transform.position = GeneratePuzzlePosition();
+        GenerateRotation(GO.transform);
+
         GO.SetActive(true);
     }
 
@@ -178,7 +180,31 @@ public class PuzzlesGenerator : MonoBehaviour
 
         return newPos;
     }
+    private void GenerateRotation(Transform obj)
+    {
+        if (obj == null) { Debug.LogWarning("Empty transform in PuzzleGenerator"); return; }
 
+        int i = Random.Range(0, 4);
+        float rot = 0.0f;
+
+        switch (i)
+        {
+            case 0:
+                rot = 0.0f;
+                break;
+            case 1:
+                rot = 90.0f;
+                break;
+            case 2:
+                rot = -90.0f;
+                break;
+            case 3:
+                rot = 180.0f;
+                break;
+        }
+
+        obj.Rotate(Vector3.up, rot);
+    }
     private Vector3 GeneratePosInNavMesh()
     {
         NavMeshHit hit;

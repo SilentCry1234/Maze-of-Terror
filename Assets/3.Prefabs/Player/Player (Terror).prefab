@@ -747,7 +747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c84648c9a3413354bbd97b8f24f3699c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionDist: 5
+  interactionDist: 3
   cameraTransf: {fileID: 2163761698960474809}
 --- !u!114 &2163761699349049300
 MonoBehaviour:

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 625281208}
   - component: {fileID: 625281209}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AltarAS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,11 +164,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3742062437850687426}
-  - component: {fileID: 3742062437850687431}
-  - component: {fileID: 3742062437850687424}
-  - component: {fileID: 3742062437850687425}
   - component: {fileID: 1851580109}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Altar
   m_TagString: Altar
   m_Icon: {fileID: 0}
@@ -184,76 +181,14 @@ Transform:
   m_GameObject: {fileID: 3742062437850687427}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.5, y: 1.99, z: 8.7}
-  m_LocalScale: {x: 1.3536, y: 4.067, z: 1.2727}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 625281208}
+  - {fileID: 543450652806249600}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3742062437850687431
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3742062437850687427}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &3742062437850687424
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3742062437850687427}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: f436f2bf6c745314c893f9a11b19e8b0, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3742062437850687425
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3742062437850687427}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1851580109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,7 +204,7 @@ MonoBehaviour:
   playerTransf: {fileID: 0}
   altarTransf: {fileID: 3742062437850687426}
   puzzleUIAnim: {fileID: 0}
-  minInteracDis: 5
+  minInteracDis: 3.5
   puzzlesInteraction:
   - {fileID: 0}
   - {fileID: 0}
@@ -280,3 +215,119 @@ MonoBehaviour:
   altarUIAS: {fileID: 0}
   openAC: {fileID: 8300000, guid: 962f56b00eb07c441bf660d64f385565, type: 3}
   closeAC: {fileID: 8300000, guid: 9fa1e9f370aed0f4faa0b0e8d5afc68c, type: 3}
+  screamAClips:
+  - {fileID: 8300000, guid: 8d85bcea588302842ac4b70e86322971, type: 3}
+  - {fileID: 8300000, guid: 3f952911993e8884ab150998dd29feae, type: 3}
+  - {fileID: 8300000, guid: 3537ae67891e7ea43a63b8565a94d507, type: 3}
+  - {fileID: 8300000, guid: 94ccd6a17df507c4da4ee52d17562649, type: 3}
+--- !u!1001 &935664491
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3742062437850687426}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 1e654e5f8c968234293d4d263016ef88, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e654e5f8c968234293d4d263016ef88, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.089998245
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e654e5f8c968234293d4d263016ef88, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e654e5f8c968234293d4d263016ef88, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.07999849
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e654e5f8c968234293d4d263016ef88, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e654e5f8c968234293d4d263016ef88, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e654e5f8c968234293d4d263016ef88, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e654e5f8c968234293d4d263016ef88, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e654e5f8c968234293d4d263016ef88, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e654e5f8c968234293d4d263016ef88, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1e654e5f8c968234293d4d263016ef88, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1e654e5f8c968234293d4d263016ef88, type: 3}
+      propertyPath: m_Name
+      value: Altar
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1e654e5f8c968234293d4d263016ef88, type: 3}
+      propertyPath: m_TagString
+      value: Altar
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1e654e5f8c968234293d4d263016ef88, type: 3}
+--- !u!4 &543450652806249600 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1e654e5f8c968234293d4d263016ef88, type: 3}
+  m_PrefabInstance: {fileID: 935664491}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &919132148882482746 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e654e5f8c968234293d4d263016ef88, type: 3}
+  m_PrefabInstance: {fileID: 935664491}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1517149953
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148882482746}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9956598, y: 1.267798, z: 0.9173808}
+  m_Center: {x: 0.10575533, y: 0.6391711, z: 0.041309595}
+--- !u!114 &1517149951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148882482746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf3575480402db40813e763382412fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 0
+  eraseRenderer: 0
+--- !u!114 &1517149952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148882482746}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76545e335b04fad458171f63496ec38d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialColor: {r: 0.74509805, g: 0.2784314, b: 0.2784314, a: 1}

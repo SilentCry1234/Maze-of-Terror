@@ -96,6 +96,31 @@ public class BatteryGenerator : MonoBehaviour
         Debug.Log("Fuera");
         return Vector3.zero;
     }
+    private void GenerateRotation(Transform obj)
+    {
+        if (obj == null) { Debug.LogWarning("Empty transform in BatteryGenerator"); return; }
+
+        int i = Random.Range(0, 4);
+        float rot = 0.0f;
+
+        switch(i)
+        {
+            case 0:
+                rot = 0.0f;
+                break;
+            case 1:
+                rot = 90.0f;
+                break;
+            case 2:
+                rot = -90.0f;
+                break;
+            case 3:
+                rot = 180.0f;
+                break;
+        }
+
+        obj.Rotate(Vector3.up , rot);
+    }
     private void GenerateBatteries()
     {
         if (gameManager == null)
@@ -135,6 +160,8 @@ public class BatteryGenerator : MonoBehaviour
                         if (batteriesOk == bateriesGO.Count)
                         {
                             optimalPosition = true;
+                            //asignar rotacion
+                            GenerateRotation(obj.transform);
                             obj.transform.position = newPos;
                         }
 
