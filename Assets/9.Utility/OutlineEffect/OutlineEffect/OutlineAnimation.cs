@@ -33,7 +33,6 @@ public class OutlineAnimation : MonoBehaviour
 
             if (c.a >= 1)
                 pingPong = false;
-            Debug.Log("alfa " + c.a);
         }
         else
         {
@@ -41,11 +40,9 @@ public class OutlineAnimation : MonoBehaviour
 
             if (c.a <= 0)
                 pingPong = true;
-            Debug.Log("alfa 2 " + c.a);
         }
 
         c.a = Mathf.Clamp01(c.a);
-        Debug.Log("alfa 3 " + c.a);
         outlineEffect.lineColor0 = c;
         outlineEffect.UpdateMaterialsPublicProperties();
     }

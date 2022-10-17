@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioIA : MonoBehaviour
@@ -8,17 +9,18 @@ public class AudioIA : MonoBehaviour
     [SerializeField] AudioSource bossSurpriseAS;
     [SerializeField] AudioSource bossBreathAS;
     [Space]
-    [SerializeField] AudioClip bossAttackAC;
     [SerializeField] AudioClip bossSurpriseAC;
     [SerializeField] AudioClip bossGrowlPhase2AC;
     [SerializeField] AudioClip bossGrowlPhase3AC;
+    [Space]
+    [SerializeField] List<AudioClip> bossAttacksAC;
 
     [Header("Sonidos del minion")]
     [SerializeField] AudioSource minionAttackAS;
     [SerializeField] AudioSource minionGrowlAS;
     [Space]
-    [SerializeField] AudioClip minionAttackAC;
     [SerializeField] AudioClip minionGrowl;
+    [SerializeField] List<AudioClip> minionAttacksAC;
 
 
     private static AudioIA instance;
@@ -33,7 +35,6 @@ public class AudioIA : MonoBehaviour
         }
         else
         {
-            Debug.Log("singletonDestruir");
             Destroy(gameObject);
         }
     }
@@ -46,19 +47,26 @@ public class AudioIA : MonoBehaviour
     #region Attacks
     public void PlayMinionAttackSound() //Utilizado al inicio de la anim. de ataque
     {
-        minionAttackAS.PlayOneShot(minionAttackAC);
+        if (minionAttacksAC.Count == 0) return;
+
+        int i = Random.Range(0, minionAttacksAC.Count);
+
+        minionAttackAS.PlayOneShot(minionAttacksAC[i]);
     }
 
     public void PlayBossAttackSound() //Utilizado al inicio de la anim. de ataque
     {
-        bossAttackAS.PlayOneShot(bossAttackAC);
+        if (bossAttacksAC.Count == 0) return;
+
+        int i = Random.Range(0, bossAttacksAC.Count);
+        
+        bossAttackAS.PlayOneShot(bossAttacksAC[i]);
     }
     #endregion
 
     #region Growls
     public void PlayMinionGrowlSound() //Utilizado al inicio de la anim. de ataque
     {
-        Debug.Log("MGrowl");
         minionGrowlAS.PlayOneShot(minionGrowl);
     }
     public void PlayBossSurpriseSound()

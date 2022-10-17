@@ -693,8 +693,8 @@ MonoBehaviour:
   player: {fileID: 0}
   horizontalMove: 0
   verticalMove: 0
-  playerSpeed: 12
-  runSpeed: 30
+  playerSpeed: 6
+  runSpeed: 10
   stamina: 5
   timeToRecover: 3
   staminaMAX: 5

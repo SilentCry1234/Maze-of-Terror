@@ -3,9 +3,7 @@ using UnityEngine.AI;
 
 public class AIBoss : MonoBehaviour
 {
-
     [SerializeField] Transform player;
-    [SerializeField] BoxCollider barrierCol;
 
     private GameManager gameManager;
     private NavMeshAgent agent;

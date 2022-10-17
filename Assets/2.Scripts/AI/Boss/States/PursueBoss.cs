@@ -6,7 +6,7 @@ public class PursueBoss : StateBoss
     public PursueBoss(GameObject _npc, NavMeshAgent _agent, Animator _anim, Transform _player) : base(_npc, _agent, _anim, _player)
     {
         name = STATE.PURSUE;
-        agent.speed = 16.0f; //Mayor velocidad que el estado caminar
+        agent.speed = 6.0f; //Mayor velocidad que el estado caminar
         agent.isStopped = false; //Con esto puedo detener el movimiento del agente
     }
     public override void Enter()

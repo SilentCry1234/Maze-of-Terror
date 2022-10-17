@@ -8,7 +8,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: BossRun
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -1727677095245917080}
@@ -22,7 +22,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 7fb264dbbe169a045af3b1c4a5cf52e8, type: 2}
+  m_Motion: {fileID: 885944232402757753, guid: ce5deee77777429489a716c94b5d1be1, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -363,7 +363,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 28ef9b947dfb2af478ca246641ab6209, type: 2}
+  m_Motion: {fileID: 885944232402757753, guid: ce5deee77777429489a716c94b5d1be1, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

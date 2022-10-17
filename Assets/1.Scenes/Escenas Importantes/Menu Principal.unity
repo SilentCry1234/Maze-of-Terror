@@ -2223,7 +2223,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a4c5145ae90c14ca08a0da7c5362b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laberynth: 1
   options: {fileID: 2008116155}
   credits: {fileID: 600233150}
 --- !u!1 &1529971387

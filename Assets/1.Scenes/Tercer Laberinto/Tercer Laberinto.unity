@@ -18619,6 +18619,7 @@ MonoBehaviour:
   victoryImage: {fileID: 157537084}
   victoryDistance: 27
   playerGo: {fileID: 1517287952}
+  redSkybox: {fileID: 2100000, guid: 461ee4244ce88d34693eb7e5d3aa07e9, type: 2}
 --- !u!1 &567161014
 GameObject:
   m_ObjectHideFlags: 0
@@ -20763,7 +20764,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 633191108}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -20773,7 +20774,7 @@ Transform:
   - {fileID: 399383980}
   m_Father: {fileID: 1509037844}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &634106512
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34220,6 +34221,7 @@ MonoBehaviour:
   victoryImage: {fileID: 0}
   victoryDistance: 27
   playerGo: {fileID: 0}
+  redSkybox: {fileID: 0}
 --- !u!1001 &1065424034
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34537,14 +34539,14 @@ MonoBehaviour:
   bossGrowlAS: {fileID: 0}
   bossSurpriseAS: {fileID: 0}
   bossBreathAS: {fileID: 0}
-  bossAttackAC: {fileID: 8300000, guid: aaac72da02896724690e86f104dcde0d, type: 3}
   bossSurpriseAC: {fileID: 8300000, guid: 1b47315e40d8c3045883da4542a4376c, type: 3}
   bossGrowlPhase2AC: {fileID: 8300000, guid: 7ed9eb26ed2282d4ebf835a9c2c1f671, type: 3}
   bossGrowlPhase3AC: {fileID: 8300000, guid: 2a242b43b0843b3468712b785fe010e4, type: 3}
+  bossAttacksAC: []
   minionAttackAS: {fileID: 0}
   minionGrowlAS: {fileID: 0}
-  minionAttackAC: {fileID: 8300000, guid: 0e0f15cf459cce54a8f71e8c3008c88e, type: 3}
   minionGrowl: {fileID: 8300000, guid: b4cc9b5292d48334a8256adfcb3ebec4, type: 3}
+  minionAttacksAC: []
 --- !u!1001 &1074417437
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49158,7 +49160,7 @@ PrefabInstance:
     - target: {fileID: 1371066326, guid: 580cbf51a6f9ab8469961438983feda6, type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 2072847684}
+      objectReference: {fileID: 1730101744}
     - target: {fileID: 2163761699349049296, guid: 580cbf51a6f9ab8469961438983feda6, type: 3}
       propertyPath: gameOver
       value: 
@@ -51366,43 +51368,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 465018, guid: 5a0b23213df68f84daa6bd38ef6e458c, type: 3}
   m_PrefabInstance: {fileID: 1570822857}
   m_PrefabAsset: {fileID: 0}
---- !u!84 &1571382374
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 1920
-  m_Height: 1080
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 90
-  m_ColorFormat: 8
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1 &1576059842
 GameObject:
   m_ObjectHideFlags: 0
@@ -56557,14 +56522,25 @@ MonoBehaviour:
   bossGrowlAS: {fileID: 907244458}
   bossSurpriseAS: {fileID: 88157404}
   bossBreathAS: {fileID: 1174062226}
-  bossAttackAC: {fileID: 8300000, guid: aaac72da02896724690e86f104dcde0d, type: 3}
   bossSurpriseAC: {fileID: 8300000, guid: 1b47315e40d8c3045883da4542a4376c, type: 3}
   bossGrowlPhase2AC: {fileID: 8300000, guid: 7ed9eb26ed2282d4ebf835a9c2c1f671, type: 3}
   bossGrowlPhase3AC: {fileID: 8300000, guid: 2a242b43b0843b3468712b785fe010e4, type: 3}
+  bossAttacksAC:
+  - {fileID: 8300000, guid: b27367b5efcf1ba44b8d43930a9c70f6, type: 3}
+  - {fileID: 8300000, guid: e6f36dcb2365c704699adbc5cf1d7db6, type: 3}
+  - {fileID: 8300000, guid: aa07f10cb8264554fb1363b7d8eacec2, type: 3}
+  - {fileID: 8300000, guid: 216cebf8e37fe2649b2b9df5127275ac, type: 3}
+  - {fileID: 8300000, guid: aae78ff37675c5e4fa121c4ac2c8326b, type: 3}
+  - {fileID: 8300000, guid: 9b4f452d8afbea24b9ff64666a823db5, type: 3}
   minionAttackAS: {fileID: 453142370}
   minionGrowlAS: {fileID: 818110282}
-  minionAttackAC: {fileID: 8300000, guid: 0e0f15cf459cce54a8f71e8c3008c88e, type: 3}
-  minionGrowl: {fileID: 8300000, guid: b4cc9b5292d48334a8256adfcb3ebec4, type: 3}
+  minionGrowl: {fileID: 8300000, guid: 37231c073125eb648915a52f098846ce, type: 3}
+  minionAttacksAC:
+  - {fileID: 8300000, guid: 9d9b0269182a0ef4dba339700ca79466, type: 3}
+  - {fileID: 8300000, guid: 7fb85faee0ca92641aed1318e94fd837, type: 3}
+  - {fileID: 8300000, guid: 63b7c45180b5b7b4cae5b3c0c9fb37e3, type: 3}
+  - {fileID: 8300000, guid: 148964d71352db74492d43eb498821a6, type: 3}
+  - {fileID: 8300000, guid: 8b039ac8c0128274c9b9d8b2b68f366c, type: 3}
 --- !u!1001 &1716596014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67559,43 +67535,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 465018, guid: 5a0b23213df68f84daa6bd38ef6e458c, type: 3}
   m_PrefabInstance: {fileID: 2070350487}
   m_PrefabAsset: {fileID: 0}
---- !u!84 &2072847684
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 5
-  m_Width: 1920
-  m_Height: 1080
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 90
-  m_ColorFormat: 8
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_UseDynamicScale: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1001 &2074878827
 PrefabInstance:
   m_ObjectHideFlags: 0

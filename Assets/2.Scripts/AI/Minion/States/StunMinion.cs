@@ -26,7 +26,6 @@ public class StunMinion : StateMinion
         if (isStunned) // Si termino anim de STUN o termino el periodo de STUN..l
         {
             stunTime -= Time.deltaTime;
-            Debug.Log("ata inmovilizado " + stunTime);
             if (stunTime <= 0.0f)
             {
                 isStunned = false;
@@ -35,7 +34,6 @@ public class StunMinion : StateMinion
 
         else if (!isStunned && !isAnimActive(anim, "MinionAttack", 0, 1.0f))
         {
-            Debug.Log("retoma Patrulla");
             nextState = new PatrolMinion(npc, agent, anim, player, boss);
             stage = EVENT.EXIT;
         }

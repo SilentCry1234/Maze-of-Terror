@@ -313,6 +313,7 @@ GameObject:
   - component: {fileID: 4730139475224881894}
   - component: {fileID: 4730139475224881892}
   - component: {fileID: 4730139475224881917}
+  - component: {fileID: 1737313421}
   m_Layer: 7
   m_Name: MinionAgent
   m_TagString: Enemy Minion
@@ -458,6 +459,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+--- !u!114 &1737313421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4730139475224881893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aba578e4e26796248a25a6daf4dff97b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentDamage: 5
+  attackCollider: {fileID: 4730139476987265048}
 --- !u!1 &4730139476987265054
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,8 +483,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4730139476987265049}
   - component: {fileID: 4730139476987265048}
-  - component: {fileID: 4730139476987265051}
-  m_Layer: 0
+  - component: {fileID: 2109588326}
+  m_Layer: 7
   m_Name: AttackCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -484,7 +499,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4730139476987265054}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.6399999, z: 0}
+  m_LocalPosition: {x: 0, y: 1.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -504,7 +519,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.4335244, y: 1.6886153, z: 4.6215186}
   m_Center: {x: 0.014986547, y: -0.37543023, z: 2.3729873}
---- !u!114 &4730139476987265051
+--- !u!114 &2109588326
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -517,6 +532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agentDamage: 5
+  attackCollider: {fileID: 0}
 --- !u!1001 &799358385
 PrefabInstance:
   m_ObjectHideFlags: 0

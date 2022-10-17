@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     [Space]
     [Header("Player")]
     [SerializeField] GameObject playerGo;
+    [Space]
+    [Header("Skybox")]
+    [SerializeField] Material redSkybox;
 
     private PuzzleAltar puzzleAltar;
     private AudioIA audioIA;
@@ -51,11 +54,18 @@ public class GameManager : MonoBehaviour
                 break;
             case 6:
                 GameEnvironment.Singleton.PhaseNumber = 3;
+                ChangeSkyBox(redSkybox);
                 audioIA.PlayBossGrowlPhase(GameEnvironment.Singleton.PhaseNumber);
                 break;
         }
     }
 
+    void ChangeSkyBox(Material newSk)
+    {
+        if (newSk == null) return;
+
+        RenderSettings.skybox = newSk;
+    }
     void OpenVictoryDoor()
     {
         //1-Animacion de que la puerta se cae o poner la puerta en el piso, o poner en posicion de puerta abierta

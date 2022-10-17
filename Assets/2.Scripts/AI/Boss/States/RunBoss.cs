@@ -11,15 +11,15 @@ public class RunBoss : StateBoss
         switch (GameEnvironment.Singleton.PhaseNumber)
         {
             case 1:
-                agent.speed = 20.0f;
+                agent.speed = 6.0f;
                 Debug.Log("Fase" + GameEnvironment.Singleton.PhaseNumber);
                 break;
             case 2:
-                agent.speed = 16.0f;
+                agent.speed = 7.0f;
                 Debug.Log("Fase" + GameEnvironment.Singleton.PhaseNumber);
                 break;
             case 3:
-                agent.speed = 18.0f;
+                agent.speed = 8.0f;
                 Debug.Log("Fase" + GameEnvironment.Singleton.PhaseNumber);
                 break;
         }

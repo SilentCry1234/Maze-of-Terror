@@ -1,19 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuPrincipal : MonoBehaviour
 {
-    public int laberynth;
+    public static int currentLabyrinth;
     public GameObject options;
-    public GameObject credits; 
+    public GameObject credits;
 
+    private int SelectRandomLabyrinth(int minIndex, int maxIndex)
+    {
+        int newIndex = Random.Range(minIndex, maxIndex + 1);
+        while (newIndex == currentLabyrinth)
+        {
+            newIndex = Random.Range(minIndex, maxIndex + 1);
+
+            if (newIndex != currentLabyrinth)
+                return currentLabyrinth = newIndex;
+        }
+        return currentLabyrinth = newIndex;
+    }
 
     public void StartGame()
     {
-        SceneManager.LoadScene(laberynth); 
-        Time.timeScale = 1; 
+        SelectRandomLabyrinth(2, 4);
+        SceneManager.LoadScene(currentLabyrinth);
+        Time.timeScale = 1;
     }
     public void LoadScene(int i)
     {
@@ -27,7 +38,7 @@ public class MenuPrincipal : MonoBehaviour
 
     public void OptionsSalir()
     {
-        options.SetActive(false); 
+        options.SetActive(false);
     }
 
     public void showCredits()
@@ -42,8 +53,8 @@ public class MenuPrincipal : MonoBehaviour
 
     public void Quit()
     {
-        Debug.Log("Sali"); 
+        Debug.Log("Sali");
         Application.Quit();
     }
-   
+
 }

@@ -15,7 +15,7 @@ public class AttackMinion : StateMinion
         anim.SetBool("Attacking", true);
         isAttacking = true;
         agent.isStopped = true; //Quiero detener el movimiento del npc al atacar
-
+        
         if (AudioIA.Instance != null)
         AudioIA.Instance.PlayMinionAttackSound();
         base.Enter();
@@ -26,7 +26,6 @@ public class AttackMinion : StateMinion
         if (isAttacking) // Si termino anim de ataque o termino el periodo de ataque..l
         {
             attackTime -= Time.deltaTime;
-            Debug.Log("Atacando " + attackTime);
             if (attackTime <= 0.0f)
             {
                 isAttacking = false;

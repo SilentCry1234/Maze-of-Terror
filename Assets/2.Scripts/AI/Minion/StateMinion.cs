@@ -23,7 +23,7 @@ public class StateMinion
     //----------------------------------------
     float visibleDist = 40.0f;
     float visibleAngle = 45.0f;
-    float attackDist = 7f; //distancia de ataque, antigua 2.5
+    float attackDist = 3f; //distancia de ataque, antigua 2.5
     float timeToChase = 7.0f;
 
     bool playerSeen;
@@ -92,7 +92,6 @@ public class StateMinion
         if (playerSeen)
         {
             timeToChase -= Time.deltaTime;
-            Debug.Log("perseguir " + timeToChase);
             if (timeToChase <= 0.0f)
             {
                 playerSeen = false;
@@ -110,7 +109,6 @@ public class StateMinion
             {
                 if (rayCastInfo.transform.gameObject.tag == "Player") //Si es el jugador
                 {
-                    Debug.Log("Inicia perseguir " + timeToChase);
                     Debug.DrawRay(npc.transform.position, direction, Color.green);
                     playerSeen = true;
                     timeToChase = 7.0f;

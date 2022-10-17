@@ -8,7 +8,7 @@ public class PatrolBoss : StateBoss
     public PatrolBoss(GameObject _npc, NavMeshAgent _agent, Animator _anim, Transform _player) : base(_npc, _agent, _anim, _player)
     {
         name = STATE.PATROL;
-        agent.speed = 14; //Que tan rapido se va a mover el agente
+        agent.speed = 4.0f; //Que tan rapido se va a mover el agente
         agent.isStopped = false; //Con esto puedo detener el movimiento del agente
     }
 
