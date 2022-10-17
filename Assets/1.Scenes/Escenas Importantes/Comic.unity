@@ -180,7 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonAnim: {fileID: 0}
   goToEnable:
-  - {fileID: 1678944035}
+  - {fileID: 736605350}
   gotToDisable:
   - {fileID: 87204980}
 --- !u!114 &87204983
@@ -722,7 +722,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5066457d1d55c04498206a5dda8100b3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1bf11db36a2dcae4d93598a799739dab, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1145,6 +1145,7 @@ GameObject:
   - component: {fileID: 1009647149}
   - component: {fileID: 1009647148}
   - component: {fileID: 1009647154}
+  - component: {fileID: 1009647155}
   m_Layer: 5
   m_Name: Button4 MenuPrincipal
   m_TagString: Untagged
@@ -1359,6 +1360,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   options: {fileID: 0}
   credits: {fileID: 0}
+--- !u!114 &1009647155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009647146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab7e66921787aa84c990dba0aa496b75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1207286971
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,7 +1505,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5066457d1d55c04498206a5dda8100b3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1bf11db36a2dcae4d93598a799739dab, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1707,7 +1720,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5066457d1d55c04498206a5dda8100b3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 19597094feb4f2a4c9b487a3482246cd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2419,7 +2432,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5066457d1d55c04498206a5dda8100b3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6eb05d6e4514fbf44842bf5a34a32576, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
