@@ -39,6 +39,7 @@ public class MenuPausa : MonoBehaviour
 
     public void RegresarMenu()
     {
+        Time.timeScale = 1; 
         SceneManager.LoadScene("Menu Principal"); 
     }
 }
