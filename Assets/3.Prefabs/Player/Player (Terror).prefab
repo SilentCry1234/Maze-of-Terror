@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   luz: {fileID: 208657971406613205}
-  battery: 50
+  battery: 75
   batteryText: {fileID: 0}
   deductValue: 1
   On_Off: {fileID: 9093285069281374139}
