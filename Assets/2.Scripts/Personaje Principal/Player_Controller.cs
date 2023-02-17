@@ -19,7 +19,12 @@ public class Player_Controller : MonoBehaviour
     [SerializeField] private float stamina = 10f, timeToRecover = 5f, staminaMAX;
     public Text staminaText; 
     Vector3 playerInput;
-    FootSteps footSteps;
+
+    [Header("Pasos")]
+    [Space]
+    [SerializeField] AudioSource steps;
+    [SerializeField] AudioClip walk;
+    bool isWalking; 
 
     [Header ("Gravedad")]
     [Space]
@@ -50,11 +55,11 @@ public class Player_Controller : MonoBehaviour
     void Awake()
     {
         player = GetComponent<CharacterController>();
-        footSteps = GetComponent<FootSteps>();
         //cam = FindObjectOfType<Camera>();
         cam = Camera.main;
 
         staminaMAX = stamina; 
+        isWalking= false;
     }
 
     void Update()
@@ -62,7 +67,7 @@ public class Player_Controller : MonoBehaviour
         staminaText.text = "STAMINA: " + stamina.ToString("0"); 
         SetGravity();
         Moverse();
-        footSteps.Footsteps(); 
+        Steps();
         Mirar();
     }
 
@@ -128,5 +133,22 @@ public class Player_Controller : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         player.Move(velocity*Time.deltaTime);   
+    }
+
+    private void Steps()
+    {
+        if (playerInput != new Vector3 (0, 0, 0))
+        {
+            if (!isWalking)
+            {
+                steps.Play();
+            }
+            isWalking= true;
+        }
+        else
+        {
+            steps.Stop();
+            isWalking= false;   
+        }
     }
 }

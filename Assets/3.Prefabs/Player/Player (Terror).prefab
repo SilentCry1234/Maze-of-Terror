@@ -634,7 +634,6 @@ GameObject:
   - component: {fileID: 535462993}
   - component: {fileID: 535462994}
   - component: {fileID: 2163761699349049300}
-  - component: {fileID: 7564381862461514307}
   m_Layer: 7
   m_Name: Player (Terror)
   m_TagString: Player
@@ -762,19 +761,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpAnim: {fileID: 0}
---- !u!114 &7564381862461514307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2163761699862577401}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54d3a00d7e77a5241b43837f2d4336d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerWALK: {fileID: 0}
 --- !u!1 &2163761700237831080
 GameObject:
   m_ObjectHideFlags: 0
